@@ -1,0 +1,117 @@
+import sys
+import nacl.encoding
+import nacl.hash
+import nacl.signing
+from nacl.bindings.utils import sodium_memcmp
+from re import split
+import time
+import logging
+class CL(process):
+	def setup( workload: str, r : list ,c : list, cid : Process,public_key_dict :dict , pk: PrivateKey , client_timeout : int,parent : Process):
+		self.x= split(r"[;]+",workload)
+		self.rep = r
+		self.rec = 0
+		self.pk=pk
+		self.rid=-1
+		self.result=[]
+		self.timer_expired = False
+		self.rid_seen=[]
+		self.min_match = ((len(r)-1)/2)+1
+		self.prw = ["put('k1','kv1')","append('k1',' kv2')","slice('k1','0:2')","get('k1')","put('k2','v1')","append('k2',' v2')","slice('k2','0:1')","get('k2')"]
+		
+	def run():
+		logging.basicConfig(format='%(asctime)s : %(message)s',level = logging.INFO, filename=sys.argv[-1][0:-4]+'_log.log')
+		if workload.startswith("pseudorandom"):
+			x=[]
+			temp = split(r"[,()]+",workload)
+			pr=[temp[1],temp[2]]
+			
+			for i in range(int(pr[1])):
+				x.append(prw[(int(pr[0])+i) % len(prw)])
+			logging.info("Client "+str(c.index(cid))+" psuedorandom workload is generated")	
+				
+		for i,y in enumerate(x):
+			x[i]=x[i].strip()
+			#c_box = Box(pk, public_key_dict[rep[0]])
+			rid=rid+1
+			rid_seen.append(0)
+			encrypt_oper = pk.sign(x[i].encode())
+			#encrypt_head = pk.sign(rep[0].encode())
+			encrypt_rid = pk.sign(str(rid).encode())
+			
+			
+			time.sleep(c.index(cid)*0.01)
+			logging.info("Client "+ str(c.index(cid)) + ": Client "+str(c.index(cid)) + " sent request number " + str(rid)+" opration " +x[i]+" to replica 0")
+			send(("parent-trans",encrypt_oper,encrypt_rid),to = parent)
+			send(("initial_transmission",encrypt_oper,encrypt_rid), to= rep[0])
+			prec=rec
+			if await(rec==prec+1):
+				logging.info("Client "+ str(c.index(cid)) +": Client "+str(c.index(cid)) + " result arrived before time - out for rid "+str(rid) )
+			elif timeout(client_timeout):
+				logging.info("Client "+ str(c.index(cid)) +": Client "+str(c.index(cid)) + " timer expired for  request number " + str(rid)+" opration " +x[i])
+				timer_expired = True
+				
+				for repl in rep:
+					time.sleep(0.01)
+					send(("re-trans-client",encrypt_oper,encrypt_rid), to =repl)
+				timer_expired= False
+				logging.info("Client "+ str(c.index(cid))+":  Client "+str(c.index(cid)) + " sent  request number " + str(rid)+" operation " +x[i] + " to all replicas after timeout")
+			
+		await(rec == len(x))
+		
+		send(("finish",result),to=parent)
+		logging.info("Client "+ str(c.index(cid))+":  Client "+str(c.index(cid)) + " sent fianl results to parent for checking")
+		await(False)
+			
+	def receive(msg=("re-trans-replica",encrypt_hashresult,encrypt_res,rid),from_=replicas):
+		#output(encrypt_hashresult)
+		#output("received by client")
+		match =0 
+		for h in encrypt_hashresult:
+				bres=nacl.encoding.HexEncoder.decode(h[1])
+				#output(bres)
+				orig_dgs = nacl.hash.sha256(bres, encoder=nacl.encoding.HexEncoder)
+				if sodium_memcmp(h[0],orig_dgs):
+					if bres.decode()== encrypt_res:
+						match = match+1
+		if match >=min_match and rid_seen[rid] == 0:
+			rid_seen[rid]=1
+			match=0
+			
+			logging.info("Client " + str(c.index(cid)) + ": Result validation success after receiving re-transmit result from replica "+str(r.index(replicas))+" for rid "+str(rid))
+			result.append(encrypt_res)
+			rec=rec+1
+	def receive(msg=("result",encrypt_hashresult,encrypt_res,rid),from_=tail):
+		
+		if not timer_expired:
+			c_t_dkey=nacl.signing.VerifyKey(public_key_dict[tail], encoder=nacl.encoding.HexEncoder)
+			try:
+				c_t_dkey.verify(encrypt_hashresult)
+				c_t_dkey.verify(encrypt_res)
+				res = encrypt_res.message.decode()
+				hashresult = eval(encrypt_hashresult.message.decode())
+				
+			except nacl.exceptions.BadSignatureError :
+				logging.info("Client "+ str(c.index(cid))+":  tail to client signature fail for rid +str(rid)")
+			logging.info("Client "+ str(c.index(cid))+":  tail to client signature success for rid +str(rid)")
+			
+			match=0
+			for h in hashresult:
+				
+				bres=nacl.encoding.HexEncoder.decode(h[1])
+				
+				orig_dgs = nacl.hash.sha256(bres, encoder=nacl.encoding.HexEncoder)
+				if sodium_memcmp(h[0],orig_dgs):
+					if bres.decode()== res:
+						match = match+1
+			
+			if match >= min_match:
+				if rid_seen[rid] == 0:
+					logging.info("Client " + str(c.index(cid)) + ": Result validation success after receiving result from tail for rid "+str(rid))
+					result.append(res)	
+			else :
+				
+				logging.error("Client " + str(c.index(cid)) + ": Result validation failed after receiving result from tail for rid "+str(rid))
+				logging.info("Client " + str(c.index(cid)) + ": Reconfiguration request to Olympus")
+			rec=rec+1
+			match=0

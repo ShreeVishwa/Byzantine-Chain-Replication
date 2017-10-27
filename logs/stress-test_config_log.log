@@ -1,0 +1,1973 @@
+2017-10-22 22:24:49,596 : Olympus : Generated Signature keys for clients
+2017-10-22 22:24:49,596 : Olympus : Generated Signature keys for replicas
+2017-10-22 22:24:50,006 : Client 1 psuedorandom workload is generated
+2017-10-22 22:24:50,006 : Client 0 psuedorandom workload is generated
+2017-10-22 22:24:50,006 : Client 3 psuedorandom workload is generated
+2017-10-22 22:24:50,011 : Client 0: Client 0 sent request number 0 opration append('k1',' kv2') to replica 0
+2017-10-22 22:24:50,011 : Client 4 psuedorandom workload is generated
+2017-10-22 22:24:50,011 : Client 5 psuedorandom workload is generated
+2017-10-22 22:24:50,016 : Client 6 psuedorandom workload is generated
+2017-10-22 22:24:50,016 : Client 7 psuedorandom workload is generated
+2017-10-22 22:24:50,021 : Client 1: Client 1 sent request number 0 opration slice('k1','0:2') to replica 0
+2017-10-22 22:24:50,021 : Client 8 psuedorandom workload is generated
+2017-10-22 22:24:50,021 : Client 9 psuedorandom workload is generated
+2017-10-22 22:24:50,031 : Client 2: Client 2 sent request number 0 opration get('k1') to replica 0
+2017-10-22 22:24:50,041 : Client 3: Client 3 sent request number 0 opration put('k2','v1') to replica 0
+2017-10-22 22:24:50,051 : Client 4: Client 4 sent request number 0 opration append('k2',' v2') to replica 0
+2017-10-22 22:24:50,059 : replica 0:  client 0 -head signature success for rid 0
+2017-10-22 22:24:50,072 : Client 5: Client 5 sent request number 0 opration slice('k2','0:1') to replica 0
+2017-10-22 22:24:50,072 : replica 0:  replica 0 -> replica 1 for slot 0
+2017-10-22 22:24:50,077 : Client 6: Client 6 sent request number 0 opration get('k2') to replica 0
+2017-10-22 22:24:50,087 : Client 7: Client 7 sent request number 0 opration put('k1','kv1') to replica 0
+2017-10-22 22:24:50,102 : Client 8: Client 8 sent request number 0 opration append('k1',' kv2') to replica 0
+2017-10-22 22:24:50,102 : replica 0:  client 1 -head signature success for rid 0
+2017-10-22 22:24:50,107 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,107 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 0
+2017-10-22 22:24:50,112 : Client 9: Client 9 sent request number 0 opration slice('k1','0:2') to replica 0
+2017-10-22 22:24:50,127 : replica 0:  replica 0 -> replica 1 for slot 1
+2017-10-22 22:24:50,132 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 0
+2017-10-22 22:24:50,137 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,137 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 0
+2017-10-22 22:24:50,137 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,137 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 1
+2017-10-22 22:24:50,147 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 1
+2017-10-22 22:24:50,147 : replica 0:  client 2 -head signature success for rid 0
+2017-10-22 22:24:50,161 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 0
+2017-10-22 22:24:50,172 : replica 0:  replica 0 -> replica 1 for slot 2
+2017-10-22 22:24:50,167 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,182 : Replica 1 Reshult_shuttle cached for slot 0
+2017-10-22 22:24:50,182 : replica 0:  client 3 -head signature success for rid 0
+2017-10-22 22:24:50,192 : replica 2: result from tail  -> client 0 is sent for slot 0
+2017-10-22 22:24:50,197 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,197 : Client 0: Result validation success after receiving result from tail for rid 0
+2017-10-22 22:24:50,197 : Client 0: Client 0 result arrived before time - out for rid 0
+2017-10-22 22:24:50,197 : Client 0: Client 0 sent request number 1 opration slice('k1','0:2') to replica 0
+2017-10-22 22:24:50,202 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,202 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 1
+2017-10-22 22:24:50,202 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 1
+2017-10-22 22:24:50,217 : replica 0:  replica 0 -> replica 1 for slot 3
+2017-10-22 22:24:50,227 : replica 2: result from tail  -> client 1 is sent for slot 1
+2017-10-22 22:24:50,227 : replica 0:  client 4 -head signature success for rid 0
+2017-10-22 22:24:50,227 : Client 1:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,227 : Client 1: Result validation success after receiving result from tail for rid 0
+2017-10-22 22:24:50,227 : Client 1: Client 1 result arrived before time - out for rid 0
+2017-10-22 22:24:50,242 : Client 1: Client 1 sent request number 1 opration get('k1') to replica 0
+2017-10-22 22:24:50,242 : replica 0:  replica 0 -> replica 1 for slot 4
+2017-10-22 22:24:50,247 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,247 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 2
+2017-10-22 22:24:50,247 : replica 0:  client 5 -head signature success for rid 0
+2017-10-22 22:24:50,247 : replica 0:  replica 0 -> replica 1 for slot 5
+2017-10-22 22:24:50,247 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 2
+2017-10-22 22:24:50,253 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,254 : Replica 1 Reshult_shuttle cached for slot 1
+2017-10-22 22:24:50,254 : replica 0:  client 6 -head signature success for rid 0
+2017-10-22 22:24:50,256 : replica 0:  replica 0 -> replica 1 for slot 6
+2017-10-22 22:24:50,257 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,258 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 2
+2017-10-22 22:24:50,259 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,260 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 3
+2017-10-22 22:24:50,260 : replica 0:  client 7 -head signature success for rid 0
+2017-10-22 22:24:50,261 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 2
+2017-10-22 22:24:50,262 : replica 0:  replica 0 -> replica 1 for slot 7
+2017-10-22 22:24:50,264 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 3
+2017-10-22 22:24:50,266 : replica 0:  client 8 -head signature success for rid 0
+2017-10-22 22:24:50,267 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,267 : replica 0:  replica 0 -> replica 1 for slot 8
+2017-10-22 22:24:50,267 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 4
+2017-10-22 22:24:50,272 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 4
+2017-10-22 22:24:50,272 : replica 0:  client 9 -head signature success for rid 0
+2017-10-22 22:24:50,277 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,277 : replica 0:  replica 0 -> replica 1 for slot 9
+2017-10-22 22:24:50,277 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 5
+2017-10-22 22:24:50,277 : replica 2: result from tail  -> client 2 is sent for slot 2
+2017-10-22 22:24:50,277 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 5
+2017-10-22 22:24:50,282 : Client 2: Result validation success after receiving result from tail for rid 0
+2017-10-22 22:24:50,282 : Client 2: Client 2 result arrived before time - out for rid 0
+2017-10-22 22:24:50,282 : replica 0:  client 0 -head signature success for rid 1
+2017-10-22 22:24:50,282 : Client 2:  Client 2 sent fianl results to parent for checking
+2017-10-22 22:24:50,282 : Parent Client : Final Results check passed for Client : 2
+2017-10-22 22:24:50,282 : replica 0:  replica 0 -> replica 1 for slot 10
+2017-10-22 22:24:50,287 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,287 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 3
+2017-10-22 22:24:50,287 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,287 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 6
+2017-10-22 22:24:50,287 : Replica 0 Reshult_shuttle cached for slot 0
+2017-10-22 22:24:50,287 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,287 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 3
+2017-10-22 22:24:50,292 : replica 0:  client 1 -head signature success for rid 1
+2017-10-22 22:24:50,292 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 6
+2017-10-22 22:24:50,292 : replica 0:  replica 0 -> replica 1 for slot 11
+2017-10-22 22:24:50,292 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,292 : Replica 1 Reshult_shuttle cached for slot 2
+2017-10-22 22:24:50,297 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,297 : Replica 0 Reshult_shuttle cached for slot 1
+2017-10-22 22:24:50,297 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,302 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,302 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 7
+2017-10-22 22:24:50,302 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,302 : Replica 0 Reshult_shuttle cached for slot 2
+2017-10-22 22:24:50,302 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,302 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 7
+2017-10-22 22:24:50,307 : replica 2: result from tail  -> client 3 is sent for slot 3
+2017-10-22 22:24:50,307 : Client 3:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,307 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,307 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 8
+2017-10-22 22:24:50,307 : Client 3: Result validation success after receiving result from tail for rid 0
+2017-10-22 22:24:50,307 : Client 3: Client 3 result arrived before time - out for rid 0
+2017-10-22 22:24:50,307 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,307 : Client 3:  Client 3 sent fianl results to parent for checking
+2017-10-22 22:24:50,312 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 4
+2017-10-22 22:24:50,312 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 8
+2017-10-22 22:24:50,312 : Parent Client : Final Results check passed for Client : 3
+2017-10-22 22:24:50,312 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 4
+2017-10-22 22:24:50,317 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,317 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 9
+2017-10-22 22:24:50,322 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 9
+2017-10-22 22:24:50,327 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,327 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 10
+2017-10-22 22:24:50,327 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 10
+2017-10-22 22:24:50,332 : replica 2: result from tail  -> client 4 is sent for slot 4
+2017-10-22 22:24:50,332 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,332 : Replica 1 Reshult_shuttle cached for slot 3
+2017-10-22 22:24:50,332 : Client 4:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,332 : Client 4: Result validation success after receiving result from tail for rid 0
+2017-10-22 22:24:50,332 : Client 4: Client 4 result arrived before time - out for rid 0
+2017-10-22 22:24:50,337 : Client 4:  Client 4 sent fianl results to parent for checking
+2017-10-22 22:24:50,337 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,337 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,337 : Parent Client : Final Results check passed for Client : 4
+2017-10-22 22:24:50,337 : Replica 0 Reshult_shuttle cached for slot 3
+1 is received for slot 11
+2017-10-22 22:24:50,337 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,337 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,337 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 5
+2017-10-22 22:24:50,342 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 11
+2017-10-22 22:24:50,342 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 5
+2017-10-22 22:24:50,342 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,342 : Replica 1 Reshult_shuttle cached for slot 4
+2017-10-22 22:24:50,347 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,347 : Replica 1 Reshult_shuttle cached for slot 5
+2017-10-22 22:24:50,347 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,347 : Replica 0 Reshult_shuttle cached for slot 4
+2017-10-22 22:24:50,347 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,354 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,354 : Replica 0 Reshult_shuttle cached for slot 5
+2017-10-22 22:24:50,355 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,359 : replica 2: result from tail  -> client 5 is sent for slot 5
+2017-10-22 22:24:50,362 : Client 5:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,363 : Client 5: Result validation success after receiving result from tail for rid 0
+2017-10-22 22:24:50,363 : replica 2: replica 1 -> replica 2signature success 
+or rid 0
+2017-10-22 22:24:50,363 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 6
+2017-10-22 22:24:50,364 : Client 5:  Client 5 sent fianl results to parent for checking
+2017-10-22 22:24:50,365 : Parent Client : Final Results check passed for Client : 5
+2017-10-22 22:24:50,366 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 6
+2017-10-22 22:24:50,367 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,367 : Replica 1 Reshult_shuttle cached for slot 6
+2017-10-22 22:24:50,372 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,372 : Replica 0 Reshult_shuttle cached for slot 6
+2017-10-22 22:24:50,372 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,377 : replica 2: result from tail  -> client 6 is sent for slot 6
+2017-10-22 22:24:50,382 : Client 6:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,382 : Client 6: Result validation success after receiving result from tail for rid 0
+2017-10-22 22:24:50,382 : Client 6: Client 6 result arrived before time - out for rid 0
+2017-10-22 22:24:50,382 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,382 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 7
+2017-10-22 22:24:50,382 : Client 6:  Client 6 sent fianl results to parent for checking
+2017-10-22 22:24:50,387 : Parent Client : Final Results check passed for Client : 6
+2017-10-22 22:24:50,387 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 7
+2017-10-22 22:24:50,387 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,387 : Replica 1 Reshult_shuttle cached for slot 7
+2017-10-22 22:24:50,392 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,392 : Replica 0 Reshult_shuttle cached for slot 7
+2017-10-22 22:24:50,392 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,402 : replica 2: result from tail  -> client 7 is sent for slot 7
+2017-10-22 22:24:50,402 : Client 7:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,407 : Client 7: Result validation success after receiving result from tail for rid 0
+2017-10-22 22:24:50,407 : Client 7: Client 7 result arrived before time - out for rid 0
+2017-10-22 22:24:50,407 : Client 7:  Client 7 sent fianl results to parent for checking
+2017-10-22 22:24:50,407 : Parent Client : Final Results check passed for Client : 7
+2017-10-22 22:24:50,407 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,407 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 8
+2017-10-22 22:24:50,412 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 8
+2017-10-22 22:24:50,412 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,412 : Replica 1 Reshult_shuttle cached for slot 8
+2017-10-22 22:24:50,417 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,422 : Replica 0 Reshult_shuttle cached for slot 8
+2017-10-22 22:24:50,422 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,427 : replica 2: result from tail  -> client 8 is sent for slot 8
+2017-10-22 22:24:50,427 : Client 8:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,432 : Client 8: Result validation success after receiving result from tail for rid 0
+2017-10-22 22:24:50,432 : Client 8: Client 8 result arrived before time - out for rid 0
+2017-10-22 22:24:50,432 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,432 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 9
+2017-10-22 22:24:50,432 : Client 8:  Client 8 sent fianl results to parent for checking
+2017-10-22 22:24:50,432 : Parent Client : Final Results check passed for Client : 8
+2017-10-22 22:24:50,432 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 9
+2017-10-22 22:24:50,437 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,437 : Replica 1 Reshult_shuttle cached for slot 9
+2017-10-22 22:24:50,442 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,442 : Replica 0 Reshult_shuttle cached for slot 9
+2017-10-22 22:24:50,442 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,452 : replica 2: result from tail  -> client 9 is sent for slot 9
+2017-10-22 22:24:50,454 : Client 9:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,455 : Client 9: Result validation success after receiving result from tail for rid 0
+2017-10-22 22:24:50,455 : Client 9: Client 9 result arrived before time - out for rid 0
+2017-10-22 22:24:50,456 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,457 : Client 9:  Client 9 sent fianl results to parent for checking
+2017-10-22 22:24:50,457 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 10
+2017-10-22 22:24:50,458 : Parent Client : Final Results check passed for Client : 9
+2017-10-22 22:24:50,459 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 10
+2017-10-22 22:24:50,461 : replica 2: result from tail  -> client 0 is sent for slot 10
+2017-10-22 22:24:50,462 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,462 : Replica 1 Reshult_shuttle cached for slot 10
+2017-10-22 22:24:50,463 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,464 : Client 0: Result validation success after receiving result from tail for rid 1
+2017-10-22 22:24:50,464 : Client 0: Client 0 result arrived before time - out for rid 1
+2017-10-22 22:24:50,465 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,465 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 11
+2017-10-22 22:24:50,465 : Client 0: Client 0 sent request number 2 opration get('k1') to replica 0
+2017-10-22 22:24:50,467 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,467 : Replica 0 Reshult_shuttle cached for slot 10
+2017-10-22 22:24:50,467 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,467 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 11
+2017-10-22 22:24:50,467 : replica 2: result from tail  -> client 1 is sent for slot 11
+2017-10-22 22:24:50,467 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,467 : Replica 1 Reshult_shuttle cached for slot 11
+2017-10-22 22:24:50,467 : replica 0:  client 0 -head signature success for rid 2
+2017-10-22 22:24:50,472 : Client 1:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,472 : replica 0:  replica 0 -> replica 1 for slot 12
+2017-10-22 22:24:50,472 : Client 1: Result validation success after receiving result from tail for rid 1
+2017-10-22 22:24:50,472 : Client 1: Client 1 result arrived before time - out for rid 1
+2017-10-22 22:24:50,477 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,477 : Replica 0 Reshult_shuttle cached for slot 11
+2017-10-22 22:24:50,477 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,477 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,477 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 12
+2017-10-22 22:24:50,482 : Client 1: Client 1 sent request number 2 opration put('k2','v1') to replica 0
+2017-10-22 22:24:50,482 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 12
+2017-10-22 22:24:50,486 : replica 0:  client 1 -head signature success for rid 2
+2017-10-22 22:24:50,486 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,486 : replica 0:  replica 0 -> replica 1 for slot 13
+2017-10-22 22:24:50,486 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 12
+2017-10-22 22:24:50,490 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 12
+2017-10-22 22:24:50,490 : replica 2: result from tail  -> client 0 is sent for slot 12
+2017-10-22 22:24:50,494 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,494 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 13
+2017-10-22 22:24:50,494 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,494 : Client 0: Result validation success after receiving result from tail for rid 2
+2017-10-22 22:24:50,494 : Client 0: Client 0 result arrived before time - out for rid 2
+2017-10-22 22:24:50,494 : Client 0: Client 0 sent request number 3 opration put('k2','v1') to replica 0
+2017-10-22 22:24:50,494 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 13
+2017-10-22 22:24:50,498 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,498 : Replica 1 Reshult_shuttle cached for slot 12
+2017-10-22 22:24:50,498 : replica 0:  client 0 -head signature success for rid 3
+2017-10-22 22:24:50,498 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,498 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 13
+2017-10-22 22:24:50,503 : replica 0:  replica 0 -> replica 1 for slot 14
+2017-10-22 22:24:50,503 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 13
+2017-10-22 22:24:50,503 : replica 2: result from tail  -> client 1 is sent for slot 13
+2017-10-22 22:24:50,503 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,503 : Replica 0 Reshult_shuttle cached for slot 12
+2017-10-22 22:24:50,503 : Replica 0 Reshult_shuttle reached head
+ture success
+2017-10-22 22:24:50,503 : Replica 1 Reshult_shuttle cached for slot 13
+2017-10-22 22:24:50,508 : Client 1:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,508 : Client 1: Result validation success after receiving result from tail for rid 2
+2017-10-22 22:24:50,508 : Client 1: Client 1 result arrived before time - out for rid 2
+2017-10-22 22:24:50,508 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,508 : Replica 0 Reshult_shuttle cached for slot 13
+2017-10-22 22:24:50,508 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,508 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,513 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 14
+2017-10-22 22:24:50,513 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 14
+2017-10-22 22:24:50,518 : Client 1: Client 1 sent request number 3 opration append('k2',' v2') to replica 0
+2017-10-22 22:24:50,518 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,518 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 14
+2017-10-22 22:24:50,523 : replica 0:  client 1 -head signature success for rid 3
+2017-10-22 22:24:50,523 : replica 0:  replica 0 -> replica 1 for slot 15
+2017-10-22 22:24:50,523 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 14
+2017-10-22 22:24:50,523 : replica 2: result from tail  -> client 0 is sent for slot 14
+2017-10-22 22:24:50,528 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,528 : Replica 1 Reshult_shuttle cached for slot 14
+2017-10-22 22:24:50,528 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,528 : Client 0: Result validation success after receiving result from tail for rid 3
+2017-10-22 22:24:50,528 : Client 0: Client 0 result arrived before time - out for rid 3
+2017-10-22 22:24:50,528 : Client 0: Client 0 sent request number 4 opration append('k2',' v2') to replica 0
+2017-10-22 22:24:50,533 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,533 : Replica 0 Reshult_shuttle cached for slot 14
+2017-10-22 22:24:50,533 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,533 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,533 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 15
+2017-10-22 22:24:50,533 : replica 0:  client 0 -head signature success for rid 4
+2017-10-22 22:24:50,533 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 15
+2017-10-22 22:24:50,538 : replica 0:  replica 0 -> replica 1 for slot 16
+2017-10-22 22:24:50,538 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,543 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 15
+2017-10-22 22:24:50,543 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,543 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 16
+2017-10-22 22:24:50,543 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 15
+2017-10-22 22:24:50,543 : replica 2: result from tail  -> client 1 is sent for slot 15
+2017-10-22 22:24:50,548 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 16
+2017-10-22 22:24:50,548 : Client 1:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,548 : Client 1: Result validation success after receiving result from tail for rid 3
+2017-10-22 22:24:50,548 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,548 : Client 1: Client 1 result arrived before time - out for rid 3
+2017-10-22 22:24:50,548 : Replica 1 Reshult_shuttle cached for slot 15
+2017-10-22 22:24:50,554 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,555 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 16
+2017-10-22 22:24:50,556 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,557 : Replica 0 Reshult_shuttle cached for slot 15
+2017-10-22 22:24:50,557 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,557 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 16
+2017-10-22 22:24:50,558 : replica 2: result from tail  -> client 0 is sent for slot 16
+2017-10-22 22:24:50,559 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,560 : Replica 1 Reshult_shuttle cached for slot 16
+2017-10-22 22:24:50,561 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,562 : Client 0: Result validation success after receiving result from tail for rid 4
+2017-10-22 22:24:50,562 : Client 0: Client 0 result arrived before time - out for rid 4
+2017-10-22 22:24:50,563 : Client 1: Client 1 sent request number 4 opration slice('k2','0:1') to replica 0
+2017-10-22 22:24:50,563 : Client 0: Client 0 sent request number 5 opration slice('k2','0:1') to replica 0
+2017-10-22 22:24:50,564 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,564 : Replica 0 Reshult_shuttle cached for slot 16
+2017-10-22 22:24:50,565 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,567 : replica 0:  client 1 -head signature success for rid 4
+2017-10-22 22:24:50,567 : replica 0:  replica 0 -> replica 1 for slot 17
+2017-10-22 22:24:50,572 : replica 0:  client 0 -head signature success for rid 5
+2017-10-22 22:24:50,572 : replica 0:  replica 0 -> replica 1 for slot 18
+2017-10-22 22:24:50,572 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,572 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 17
+2017-10-22 22:24:50,577 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 17
+2017-10-22 22:24:50,582 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,582 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 18
+2017-10-22 22:24:50,582 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,582 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 17
+2017-10-22 22:24:50,587 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 18
+2017-10-22 22:24:50,587 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 17
+2017-10-22 22:24:50,587 : replica 2: result from tail  -> client 1 is sent for slot 17
+2017-10-22 22:24:50,587 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,587 : Replica 1 Reshult_shuttle cached for slot 17
+2017-10-22 22:24:50,592 : Client 1:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,592 : Client 1: Result validation success after receiving result from tail for rid 4
+2017-10-22 22:24:50,592 : Client 1: Client 1 result arrived before time - out for rid 4
+2017-10-22 22:24:50,592 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,592 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,592 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 18
+2017-10-22 22:24:50,592 : Replica 0 Reshult_shuttle cached for slot 17
+2017-10-22 22:24:50,592 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,597 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 18
+2017-10-22 22:24:50,597 : replica 2: result from tail  -> client 0 is sent for slot 18
+2017-10-22 22:24:50,597 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,597 : Replica 1 Reshult_shuttle cached for slot 18
+2017-10-22 22:24:50,597 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,597 : Client 0: Result validation success after receiving result from tail for rid 5
+2017-10-22 22:24:50,597 : Client 0: Client 0 result arrived before time - out for rid 5
+2017-10-22 22:24:50,602 : Client 1: Client 1 sent request number 5 opration get('k2') to replica 0
+2017-10-22 22:24:50,602 : Client 0: Client 0 sent request number 6 opration get('k2') to replica 0
+2017-10-22 22:24:50,602 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,602 : Replica 0 Reshult_shuttle cached for slot 18
+2017-10-22 22:24:50,602 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,607 : replica 0:  client 1 -head signature success for rid 5
+2017-10-22 22:24:50,607 : replica 0:  replica 0 -> replica 1 for slot 19
+2017-10-22 22:24:50,612 : replica 0:  client 0 -head signature success for rid 6
+2017-10-22 22:24:50,612 : replica 0:  replica 0 -> replica 1 for slot 20
+2017-10-22 22:24:50,612 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,612 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 19
+2017-10-22 22:24:50,617 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 19
+2017-10-22 22:24:50,622 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,622 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 20
+2017-10-22 22:24:50,622 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,622 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 19
+2017-10-22 22:24:50,627 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 20
+2017-10-22 22:24:50,627 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 19
+2017-10-22 22:24:50,627 : replica 2: result from tail  -> client 1 is sent for slot 19
+2017-10-22 22:24:50,627 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,627 : Replica 1 Reshult_shuttle cached for slot 19
+2017-10-22 22:24:50,632 : Client 1:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,632 : Client 1: Result validation success after receiving result from tail for rid 5
+2017-10-22 22:24:50,632 : Client 1: Client 1 result arrived before time - out for rid 5
+2017-10-22 22:24:50,632 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,632 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 20
+2017-10-22 22:24:50,632 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,632 : Replica 0 Reshult_shuttle cached for slot 19
+2017-10-22 22:24:50,632 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,637 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 20
+2017-10-22 22:24:50,637 : replica 2: result from tail  -> client 0 is sent for slot 20
+2017-10-22 22:24:50,637 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,637 : Replica 1 Reshult_shuttle cached for slot 20
+2017-10-22 22:24:50,637 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,642 : Client 0: Result validation success after receiving result from tail for rid 6
+2017-10-22 22:24:50,642 : Client 1: Client 1 sent request number 6 opration put('k1','kv1') to replica 0
+2017-10-22 22:24:50,642 : Client 0: Client 0 result arrived before time - out for rid 6
+2017-10-22 22:24:50,642 : Client 0: Client 0 sent request number 7 opration put('k1','kv1') to replica 0
+2017-10-22 22:24:50,642 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,642 : Replica 0 Reshult_shuttle cached for slot 20
+2017-10-22 22:24:50,642 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,647 : replica 0:  client 1 -head signature success for rid 6
+2017-10-22 22:24:50,647 : replica 0:  replica 0 -> replica 1 for slot 21
+2017-10-22 22:24:50,654 : replica 0:  client 0 -head signature success for rid 7
+2017-10-22 22:24:50,655 : replica 0:  replica 0 -> replica 1 for slot 22
+2017-10-22 22:24:50,657 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,658 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 21
+2017-10-22 22:24:50,661 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 21
+2017-10-22 22:24:50,665 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,666 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 22
+2017-10-22 22:24:50,666 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,667 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 21
+2017-10-22 22:24:50,667 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 22
+2017-10-22 22:24:50,667 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 21
+2017-10-22 22:24:50,667 : replica 2: result from tail  -> client 1 is sent for slot 21
+2017-10-22 22:24:50,667 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,672 : Replica 1 Reshult_shuttle cached for slot 21
+2017-10-22 22:24:50,672 : Client 1:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,672 : Client 1: Result validation success after receiving result from tail for rid 6
+2017-10-22 22:24:50,672 : Client 1: Client 1 result arrived before time - out for rid 6
+2017-10-22 22:24:50,672 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,672 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 22
+2017-10-22 22:24:50,672 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,672 : Replica 0 Reshult_shuttle cached for slot 21
+2017-10-22 22:24:50,672 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,677 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 22
+2017-10-22 22:24:50,677 : replica 2: result from tail  -> client 0 is sent for slot 22
+2017-10-22 22:24:50,677 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,677 : Replica 1 Reshult_shuttle cached for slot 22
+2017-10-22 22:24:50,682 : Client 0:  tail to client signature success for rid +str(rid)
+ kv2') to replica 0
+2017-10-22 22:24:50,682 : Client 0: Result validation success after receiving result from tail for rid 7
+2017-10-22 22:24:50,682 : Client 0: Client 0 result arrived before time - out for rid 7
+2017-10-22 22:24:50,682 : Client 0: Client 0 sent request number 8 opration append('k1',' kv2') to replica 0
+2017-10-22 22:24:50,682 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,682 : Replica 0 Reshult_shuttle cached for slot 22
+2017-10-22 22:24:50,687 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,687 : replica 0:  client 1 -head signature success for rid 7
+2017-10-22 22:24:50,687 : replica 0:  replica 0 -> replica 1 for slot 23
+2017-10-22 22:24:50,692 : replica 0:  client 0 -head signature success for rid 8
+2017-10-22 22:24:50,692 : replica 0:  replica 0 -> replica 1 for slot 24
+2017-10-22 22:24:50,697 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,697 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 23
+2017-10-22 22:24:50,697 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 23
+2017-10-22 22:24:50,702 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,702 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 24
+2017-10-22 22:24:50,702 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,702 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 23
+2017-10-22 22:24:50,707 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 24
+2017-10-22 22:24:50,707 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 23
+2017-10-22 22:24:50,707 : replica 2: result from tail  -> client 1 is sent for slot 23
+2017-10-22 22:24:50,707 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,712 : Replica 1 Reshult_shuttle cached for slot 23
+2017-10-22 22:24:50,712 : Client 1:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,712 : Client 1: Result validation success after receiving result from tail for rid 7
+2017-10-22 22:24:50,712 : Client 1: Client 1 result arrived before time - out for rid 7
+2017-10-22 22:24:50,712 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,712 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 24
+2017-10-22 22:24:50,712 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,712 : Replica 0 Reshult_shuttle cached for slot 23
+2017-10-22 22:24:50,712 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,717 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 24
+2017-10-22 22:24:50,717 : replica 2: result from tail  -> client 0 is sent for slot 24
+2017-10-22 22:24:50,717 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,717 : Replica 1 Reshult_shuttle cached for slot 24
+2017-10-22 22:24:50,717 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,722 : Client 1: Client 1 sent request number 8 opration slice('k1','0:2') to replica 0
+2017-10-22 22:24:50,722 : Client 0: Result validation success after receiving result from tail for rid 8
+2017-10-22 22:24:50,722 : Client 0: Client 0 result arrived before time - out for rid 8
+2017-10-22 22:24:50,722 : Client 0: Client 0 sent request number 9 opration slice('k1','0:2') to replica 0
+2017-10-22 22:24:50,722 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,722 : Replica 0 Reshult_shuttle cached for slot 24
+2017-10-22 22:24:50,727 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,727 : replica 0:  client 1 -head signature success for rid 8
+2017-10-22 22:24:50,727 : replica 0:  replica 0 -> replica 1 for slot 25
+2017-10-22 22:24:50,732 : replica 0:  client 0 -head signature success for rid 9
+2017-10-22 22:24:50,732 : replica 0:  replica 0 -> replica 1 for slot 26
+2017-10-22 22:24:50,737 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,737 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 25
+2017-10-22 22:24:50,742 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 25
+2017-10-22 22:24:50,742 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,742 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 26
+2017-10-22 22:24:50,747 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,747 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 25
+2017-10-22 22:24:50,747 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 26
+2017-10-22 22:24:50,747 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 25
+2017-10-22 22:24:50,753 : replica 2: result from tail  -> client 1 is sent for slot 25
+2017-10-22 22:24:50,753 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,753 : Replica 1 Reshult_shuttle cached for slot 25
+2017-10-22 22:24:50,755 : Client 1:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,755 : Client 1: Result validation success after receiving result from tail for rid 8
+2017-10-22 22:24:50,756 : Client 1: Client 1 result arrived before time - out for rid 8
+2017-10-22 22:24:50,757 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,757 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 26
+2017-10-22 22:24:50,757 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,758 : Replica 0 Reshult_shuttle cached for slot 25
+2017-10-22 22:24:50,758 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,759 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 26
+2017-10-22 22:24:50,761 : replica 2: result from tail  -> client 0 is sent for slot 26
+2017-10-22 22:24:50,762 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,762 : Replica 1 Reshult_shuttle cached for slot 26
+2017-10-22 22:24:50,763 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,764 : Client 0: Result validation success after receiving result from tail for rid 9
+2017-10-22 22:24:50,764 : Client 0: Client 0 result arrived before time - out for rid 9
+2017-10-22 22:24:50,765 : Client 0: Client 0 sent request number 10 opration get('k1') to replica 0
+2017-10-22 22:24:50,766 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,766 : Client 1: Client 1 sent request number 9 opration get('k1') to replica 0
+2017-10-22 22:24:50,766 : Replica 0 Reshult_shuttle cached for slot 26
+2017-10-22 22:24:50,767 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,767 : replica 0:  client 0 -head signature success for rid 10
+2017-10-22 22:24:50,767 : replica 0:  replica 0 -> replica 1 for slot 27
+2017-10-22 22:24:50,772 : replica 0:  client 1 -head signature success for rid 9
+2017-10-22 22:24:50,772 : replica 0:  replica 0 -> replica 1 for slot 28
+2017-10-22 22:24:50,777 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,777 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 27
+2017-10-22 22:24:50,782 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 27
+2017-10-22 22:24:50,782 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,782 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 28
+2017-10-22 22:24:50,787 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,787 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 27
+2017-10-22 22:24:50,787 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 28
+2017-10-22 22:24:50,787 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 27
+2017-10-22 22:24:50,792 : replica 2: result from tail  -> client 0 is sent for slot 27
+2017-10-22 22:24:50,792 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,792 : Replica 1 Reshult_shuttle cached for slot 27
+2017-10-22 22:24:50,792 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,792 : Client 0: Result validation success after receiving result from tail for rid 10
+2017-10-22 22:24:50,792 : Client 0: Client 0 result arrived before time - out for rid 10
+2017-10-22 22:24:50,797 : Client 0: Client 0 sent request number 11 opration put('k2','v1') to replica 0
+2017-10-22 22:24:50,797 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,797 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,797 : Replica 0 Reshult_shuttle cached for slot 27
+2017-10-22 22:24:50,797 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 28
+2017-10-22 22:24:50,797 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,802 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 28
+2017-10-22 22:24:50,802 : replica 0:  client 0 -head signature success for rid 11
+2017-10-22 22:24:50,802 : replica 2: result from tail  -> client 1 is sent for slot 28
+2017-10-22 22:24:50,802 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,802 : replica 0:  replica 0 -> replica 1 for slot 29
+2017-10-22 22:24:50,802 : Replica 1 Reshult_shuttle cached for slot 28
+2017-10-22 22:24:50,807 : Client 1:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,807 : Client 1: Result validation success after receiving result from tail for rid 9
+2017-10-22 22:24:50,807 : Client 1: Client 1 result arrived before time - out for rid 9
+2017-10-22 22:24:50,807 : Client 1:  Client 1 sent fianl results to parent for checking
+2017-10-22 22:24:50,807 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,807 : Replica 0 Reshult_shuttle cached for slot 28
+2017-10-22 22:24:50,807 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,807 : Parent Client : Final Results check passed for Client : 1
+2017-10-22 22:24:50,812 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,812 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 29
+2017-10-22 22:24:50,812 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 29
+2017-10-22 22:24:50,817 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,817 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 29
+2017-10-22 22:24:50,822 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 29
+2017-10-22 22:24:50,822 : replica 2: result from tail  -> client 0 is sent for slot 29
+2017-10-22 22:24:50,827 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,827 : Replica 1 Reshult_shuttle cached for slot 29
+2017-10-22 22:24:50,827 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,827 : Client 0: Result validation success after receiving result from tail for rid 11
+2017-10-22 22:24:50,827 : Client 0: Client 0 result arrived before time - out for rid 11
+2017-10-22 22:24:50,827 : Client 0: Client 0 sent request number 12 opration append('k2',' v2') to replica 0
+2017-10-22 22:24:50,827 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,832 : Replica 0 Reshult_shuttle cached for slot 29
+2017-10-22 22:24:50,832 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,832 : replica 0:  client 0 -head signature success for rid 12
+2017-10-22 22:24:50,837 : replica 0:  replica 0 -> replica 1 for slot 30
+2017-10-22 22:24:50,842 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,842 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 30
+2017-10-22 22:24:50,847 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 30
+2017-10-22 22:24:50,852 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,853 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 30
+2017-10-22 22:24:50,855 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 30
+2017-10-22 22:24:50,856 : replica 2: result from tail  -> client 0 is sent for slot 30
+2017-10-22 22:24:50,857 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,858 : Replica 1 Reshult_shuttle cached for slot 30
+2017-10-22 22:24:50,859 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,860 : Client 0: Result validation success after receiving result from tail for rid 12
+2017-10-22 22:24:50,860 : Client 0: Client 0 result arrived before time - out for rid 12
+2017-10-22 22:24:50,861 : Client 0: Client 0 sent request number 13 opration slice('k2','0:1') to replica 0
+2017-10-22 22:24:50,862 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,862 : Replica 0 Reshult_shuttle cached for slot 30
+2017-10-22 22:24:50,863 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,866 : replica 0:  client 0 -head signature success for rid 13
+2017-10-22 22:24:50,867 : replica 0:  replica 0 -> replica 1 for slot 31
+2017-10-22 22:24:50,872 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,872 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 31
+2017-10-22 22:24:50,877 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 31
+2017-10-22 22:24:50,882 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,882 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 31
+2017-10-22 22:24:50,882 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 31
+2017-10-22 22:24:50,882 : replica 2: result from tail  -> client 0 is sent for slot 31
+2017-10-22 22:24:50,887 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,887 : Replica 1 Reshult_shuttle cached for slot 31
+2017-10-22 22:24:50,887 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,887 : Client 0: Result validation success after receiving result from tail for rid 13
+2017-10-22 22:24:50,887 : Client 0: Client 0 result arrived before time - out for rid 13
+2017-10-22 22:24:50,887 : Client 0: Client 0 sent request number 14 opration get('k2') to replica 0
+2017-10-22 22:24:50,887 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,892 : Replica 0 Reshult_shuttle cached for slot 31
+2017-10-22 22:24:50,892 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,892 : replica 0:  client 0 -head signature success for rid 14
+2017-10-22 22:24:50,897 : replica 0:  replica 0 -> replica 1 for slot 32
+2017-10-22 22:24:50,902 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,902 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 32
+2017-10-22 22:24:50,907 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 32
+2017-10-22 22:24:50,912 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,912 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 32
+2017-10-22 22:24:50,912 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 32
+2017-10-22 22:24:50,912 : replica 2: result from tail  -> client 0 is sent for slot 32
+2017-10-22 22:24:50,917 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,917 : Replica 1 Reshult_shuttle cached for slot 32
+2017-10-22 22:24:50,917 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,917 : Client 0: Result validation success after receiving result from tail for rid 14
+2017-10-22 22:24:50,917 : Client 0: Client 0 result arrived before time - out for rid 14
+2017-10-22 22:24:50,917 : Client 0: Client 0 sent request number 15 opration put('k1','kv1') to replica 0
+2017-10-22 22:24:50,922 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,922 : Replica 0 Reshult_shuttle cached for slot 32
+2017-10-22 22:24:50,922 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,927 : replica 0:  client 0 -head signature success for rid 15
+2017-10-22 22:24:50,927 : replica 0:  replica 0 -> replica 1 for slot 33
+2017-10-22 22:24:50,932 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,932 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 33
+2017-10-22 22:24:50,937 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 33
+2017-10-22 22:24:50,942 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,942 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 33
+2017-10-22 22:24:50,947 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 33
+2017-10-22 22:24:50,947 : replica 2: result from tail  -> client 0 is sent for slot 33
+2017-10-22 22:24:50,947 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,947 : Replica 1 Reshult_shuttle cached for slot 33
+2017-10-22 22:24:50,952 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,953 : Client 0: Result validation success after receiving result from tail for rid 15
+2017-10-22 22:24:50,953 : Client 0: Client 0 result arrived before time - out for rid 15
+2017-10-22 22:24:50,954 : Client 0: Client 0 sent request number 16 opration append('k1',' kv2') to replica 0
+2017-10-22 22:24:50,955 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,955 : Replica 0 Reshult_shuttle cached for slot 33
+2017-10-22 22:24:50,956 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,959 : replica 0:  client 0 -head signature success for rid 16
+2017-10-22 22:24:50,961 : replica 0:  replica 0 -> replica 1 for slot 34
+2017-10-22 22:24:50,967 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,967 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 34
+2017-10-22 22:24:50,967 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 34
+2017-10-22 22:24:50,972 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:50,977 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 34
+2017-10-22 22:24:50,977 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 34
+2017-10-22 22:24:50,977 : replica 2: result from tail  -> client 0 is sent for slot 34
+2017-10-22 22:24:50,977 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:50,982 : Replica 1 Reshult_shuttle cached for slot 34
+2017-10-22 22:24:50,982 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:50,982 : Client 0: Result validation success after receiving result from tail for rid 16
+2017-10-22 22:24:50,982 : Client 0: Client 0 result arrived before time - out for rid 16
+2017-10-22 22:24:50,982 : Client 0: Client 0 sent request number 17 opration slice('k1','0:2') to replica 0
+2017-10-22 22:24:50,982 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:50,982 : Replica 0 Reshult_shuttle cached for slot 34
+2017-10-22 22:24:50,987 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:50,987 : replica 0:  client 0 -head signature success for rid 17
+2017-10-22 22:24:50,992 : replica 0:  replica 0 -> replica 1 for slot 35
+2017-10-22 22:24:50,997 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:50,997 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 35
+2017-10-22 22:24:51,002 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 35
+2017-10-22 22:24:51,007 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,007 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 35
+2017-10-22 22:24:51,007 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 35
+2017-10-22 22:24:51,007 : replica 2: result from tail  -> client 0 is sent for slot 35
+2017-10-22 22:24:51,012 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,012 : Replica 1 Reshult_shuttle cached for slot 35
+2017-10-22 22:24:51,012 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,012 : Client 0: Result validation success after receiving result from tail for rid 17
+2017-10-22 22:24:51,012 : Client 0: Client 0 result arrived before time - out for rid 17
+2017-10-22 22:24:51,012 : Client 0: Client 0 sent request number 18 opration get('k1') to replica 0
+2017-10-22 22:24:51,017 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,017 : Replica 0 Reshult_shuttle cached for slot 35
+2017-10-22 22:24:51,017 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,017 : replica 0:  client 0 -head signature success for rid 18
+2017-10-22 22:24:51,022 : replica 0:  replica 0 -> replica 1 for slot 36
+2017-10-22 22:24:51,027 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,027 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 36
+2017-10-22 22:24:51,032 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 36
+2017-10-22 22:24:51,037 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,037 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 36
+2017-10-22 22:24:51,042 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 36
+2017-10-22 22:24:51,042 : replica 2: result from tail  -> client 0 is sent for slot 36
+2017-10-22 22:24:51,042 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,042 : Replica 1 Reshult_shuttle cached for slot 36
+2017-10-22 22:24:51,042 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,042 : Client 0: Result validation success after receiving result from tail for rid 18
+2017-10-22 22:24:51,047 : Client 0: Client 0 result arrived before time - out for rid 18
+2017-10-22 22:24:51,047 : Client 0: Client 0 sent request number 19 opration put('k2','v1') to replica 0
+2017-10-22 22:24:51,047 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,047 : Replica 0 Reshult_shuttle cached for slot 36
+2017-10-22 22:24:51,047 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,053 : replica 0:  client 0 -head signature success for rid 19
+2017-10-22 22:24:51,054 : replica 0:  replica 0 -> replica 1 for slot 37
+2017-10-22 22:24:51,062 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,062 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 37
+2017-10-22 22:24:51,065 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 37
+2017-10-22 22:24:51,067 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,067 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 37
+2017-10-22 22:24:51,072 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 37
+2017-10-22 22:24:51,072 : replica 2: result from tail  -> client 0 is sent for slot 37
+2017-10-22 22:24:51,072 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,072 : Replica 1 Reshult_shuttle cached for slot 37
+2017-10-22 22:24:51,077 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,077 : Client 0: Result validation success after receiving result from tail for rid 19
+2017-10-22 22:24:51,077 : Client 0: Client 0 result arrived before time - out for rid 19
+2017-10-22 22:24:51,077 : Client 0: Client 0 sent request number 20 opration append('k2',' v2') to replica 0
+2017-10-22 22:24:51,077 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,077 : Replica 0 Reshult_shuttle cached for slot 37
+2017-10-22 22:24:51,077 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,082 : replica 0:  client 0 -head signature success for rid 20
+2017-10-22 22:24:51,082 : replica 0:  replica 0 -> replica 1 for slot 38
+2017-10-22 22:24:51,092 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,092 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 38
+2017-10-22 22:24:51,097 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 38
+2017-10-22 22:24:51,102 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,102 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 38
+2017-10-22 22:24:51,102 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 38
+2017-10-22 22:24:51,107 : replica 2: result from tail  -> client 0 is sent for slot 38
+2017-10-22 22:24:51,107 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,107 : Replica 1 Reshult_shuttle cached for slot 38
+2017-10-22 22:24:51,107 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,107 : Client 0: Result validation success after receiving result from tail for rid 20
+2017-10-22 22:24:51,107 : Client 0: Client 0 result arrived before time - out for rid 20
+2017-10-22 22:24:51,107 : Client 0: Client 0 sent request number 21 opration slice('k2','0:1') to replica 0
+2017-10-22 22:24:51,112 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,112 : Replica 0 Reshult_shuttle cached for slot 38
+2017-10-22 22:24:51,112 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,117 : replica 0:  client 0 -head signature success for rid 21
+2017-10-22 22:24:51,117 : replica 0:  replica 0 -> replica 1 for slot 39
+2017-10-22 22:24:51,122 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,122 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 39
+2017-10-22 22:24:51,127 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 39
+2017-10-22 22:24:51,132 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,132 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 39
+2017-10-22 22:24:51,137 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 39
+2017-10-22 22:24:51,137 : replica 2: result from tail  -> client 0 is sent for slot 39
+2017-10-22 22:24:51,142 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,142 : Replica 1 Reshult_shuttle cached for slot 39
+2017-10-22 22:24:51,142 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,142 : Client 0: Result validation success after receiving result from tail for rid 21
+2017-10-22 22:24:51,142 : Client 0: Client 0 result arrived before time - out for rid 21
+2017-10-22 22:24:51,142 : Client 0: Client 0 sent request number 22 opration get('k2') to replica 0
+2017-10-22 22:24:51,147 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,147 : Replica 0 Reshult_shuttle cached for slot 39
+2017-10-22 22:24:51,147 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,152 : replica 0:  client 0 -head signature success for rid 22
+2017-10-22 22:24:51,154 : replica 0:  replica 0 -> replica 1 for slot 40
+2017-10-22 22:24:51,161 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,162 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 40
+2017-10-22 22:24:51,165 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 40
+2017-10-22 22:24:51,167 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,167 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 40
+2017-10-22 22:24:51,172 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 40
+2017-10-22 22:24:51,172 : replica 2: result from tail  -> client 0 is sent for slot 40
+2017-10-22 22:24:51,172 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,177 : Replica 1 Reshult_shuttle cached for slot 40
+2017-10-22 22:24:51,177 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,177 : Client 0: Result validation success after receiving result from tail for rid 22
+2017-10-22 22:24:51,177 : Client 0: Client 0 result arrived before time - out for rid 22
+2017-10-22 22:24:51,177 : Client 0: Client 0 sent request number 23 opration put('k1','kv1') to replica 0
+2017-10-22 22:24:51,177 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,182 : Replica 0 Reshult_shuttle cached for slot 40
+2017-10-22 22:24:51,182 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,182 : replica 0:  client 0 -head signature success for rid 23
+2017-10-22 22:24:51,187 : replica 0:  replica 0 -> replica 1 for slot 41
+2017-10-22 22:24:51,192 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,192 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 41
+2017-10-22 22:24:51,197 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 41
+2017-10-22 22:24:51,202 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,202 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 41
+2017-10-22 22:24:51,202 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 41
+2017-10-22 22:24:51,207 : replica 2: result from tail  -> client 0 is sent for slot 41
+2017-10-22 22:24:51,207 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,207 : Replica 1 Reshult_shuttle cached for slot 41
+2017-10-22 22:24:51,207 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,207 : Client 0: Result validation success after receiving result from tail for rid 23
+2017-10-22 22:24:51,207 : Client 0: Client 0 result arrived before time - out for rid 23
+2017-10-22 22:24:51,212 : Client 0: Client 0 sent request number 24 opration append('k1',' kv2') to replica 0
+2017-10-22 22:24:51,212 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,212 : Replica 0 Reshult_shuttle cached for slot 41
+2017-10-22 22:24:51,212 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,217 : replica 0:  client 0 -head signature success for rid 24
+2017-10-22 22:24:51,217 : replica 0:  replica 0 -> replica 1 for slot 42
+2017-10-22 22:24:51,222 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,222 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 42
+2017-10-22 22:24:51,227 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 42
+2017-10-22 22:24:51,232 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,232 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 42
+2017-10-22 22:24:51,237 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 42
+2017-10-22 22:24:51,237 : replica 2: result from tail  -> client 0 is sent for slot 42
+2017-10-22 22:24:51,237 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,237 : Replica 1 Reshult_shuttle cached for slot 42
+2017-10-22 22:24:51,242 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,242 : Client 0: Result validation success after receiving result from tail for rid 24
+2017-10-22 22:24:51,242 : Client 0: Client 0 result arrived before time - out for rid 24
+2017-10-22 22:24:51,242 : Client 0: Client 0 sent request number 25 opration slice('k1','0:2') to replica 0
+2017-10-22 22:24:51,242 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,247 : Replica 0 Reshult_shuttle cached for slot 42
+2017-10-22 22:24:51,247 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,247 : replica 0:  client 0 -head signature success for rid 25
+2017-10-22 22:24:51,247 : replica 0:  replica 0 -> replica 1 for slot 43
+2017-10-22 22:24:51,259 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,259 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 43
+2017-10-22 22:24:51,263 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 43
+2017-10-22 22:24:51,267 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,267 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 43
+2017-10-22 22:24:51,267 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 43
+2017-10-22 22:24:51,272 : replica 2: result from tail  -> client 0 is sent for slot 43
+2017-10-22 22:24:51,272 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,272 : Replica 1 Reshult_shuttle cached for slot 43
+2017-10-22 22:24:51,272 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,272 : Client 0: Result validation success after receiving result from tail for rid 25
+2017-10-22 22:24:51,272 : Client 0: Client 0 result arrived before time - out for rid 25
+2017-10-22 22:24:51,277 : Client 0: Client 0 sent request number 26 opration get('k1') to replica 0
+2017-10-22 22:24:51,277 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,277 : Replica 0 Reshult_shuttle cached for slot 43
+2017-10-22 22:24:51,277 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,283 : replica 0:  client 0 -head signature success for rid 26
+2017-10-22 22:24:51,283 : replica 0:  replica 0 -> replica 1 for slot 44
+2017-10-22 22:24:51,288 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,288 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 44
+2017-10-22 22:24:51,293 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 44
+2017-10-22 22:24:51,298 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,298 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 44
+2017-10-22 22:24:51,303 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 44
+2017-10-22 22:24:51,303 : replica 2: result from tail  -> client 0 is sent for slot 44
+2017-10-22 22:24:51,303 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,303 : Replica 1 Reshult_shuttle cached for slot 44
+2017-10-22 22:24:51,307 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,307 : Client 0: Result validation success after receiving result from tail for rid 26
+2017-10-22 22:24:51,307 : Client 0: Client 0 result arrived before time - out for rid 26
+2017-10-22 22:24:51,307 : Client 0: Client 0 sent request number 27 opration put('k2','v1') to replica 0
+2017-10-22 22:24:51,307 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,307 : Replica 0 Reshult_shuttle cached for slot 44
+2017-10-22 22:24:51,307 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,313 : replica 0:  client 0 -head signature success for rid 27
+2017-10-22 22:24:51,313 : replica 0:  replica 0 -> replica 1 for slot 45
+2017-10-22 22:24:51,323 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,323 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 45
+2017-10-22 22:24:51,323 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 45
+2017-10-22 22:24:51,333 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,333 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 45
+2017-10-22 22:24:51,338 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 45
+2017-10-22 22:24:51,338 : replica 2: result from tail  -> client 0 is sent for slot 45
+2017-10-22 22:24:51,338 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,338 : Replica 1 Reshult_shuttle cached for slot 45
+2017-10-22 22:24:51,338 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,343 : Client 0: Result validation success after receiving result from tail for rid 27
+2017-10-22 22:24:51,343 : Client 0: Client 0 result arrived before time - out for rid 27
+2017-10-22 22:24:51,343 : Client 0: Client 0 sent request number 28 opration append('k2',' v2') to replica 0
+2017-10-22 22:24:51,343 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,343 : Replica 0 Reshult_shuttle cached for slot 45
+2017-10-22 22:24:51,343 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,348 : replica 0:  client 0 -head signature success for rid 28
+2017-10-22 22:24:51,348 : replica 0:  replica 0 -> replica 1 for slot 46
+2017-10-22 22:24:51,359 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,359 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 46
+2017-10-22 22:24:51,362 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 46
+2017-10-22 22:24:51,368 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,368 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 46
+2017-10-22 22:24:51,368 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 46
+2017-10-22 22:24:51,368 : replica 2: result from tail  -> client 0 is sent for slot 46
+2017-10-22 22:24:51,373 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,373 : Replica 1 Reshult_shuttle cached for slot 46
+2017-10-22 22:24:51,373 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,373 : Client 0: Result validation success after receiving result from tail for rid 28
+2017-10-22 22:24:51,373 : Client 0: Client 0 result arrived before time - out for rid 28
+2017-10-22 22:24:51,373 : Client 0: Client 0 sent request number 29 opration slice('k2','0:1') to replica 0
+2017-10-22 22:24:51,378 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,378 : Replica 0 Reshult_shuttle cached for slot 46
+2017-10-22 22:24:51,378 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,378 : replica 0:  client 0 -head signature success for rid 29
+2017-10-22 22:24:51,383 : replica 0:  replica 0 -> replica 1 for slot 47
+2017-10-22 22:24:51,388 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,388 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 47
+2017-10-22 22:24:51,393 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 47
+2017-10-22 22:24:51,398 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,398 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 47
+2017-10-22 22:24:51,403 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 47
+2017-10-22 22:24:51,403 : replica 2: result from tail  -> client 0 is sent for slot 47
+2017-10-22 22:24:51,403 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,403 : Replica 1 Reshult_shuttle cached for slot 47
+2017-10-22 22:24:51,403 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,408 : Client 0: Result validation success after receiving result from tail for rid 29
+2017-10-22 22:24:51,408 : Client 0: Client 0 result arrived before time - out for rid 29
+2017-10-22 22:24:51,408 : Client 0: Client 0 sent request number 30 opration get('k2') to replica 0
+2017-10-22 22:24:51,408 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,408 : Replica 0 Reshult_shuttle cached for slot 47
+2017-10-22 22:24:51,408 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,413 : replica 0:  client 0 -head signature success for rid 30
+2017-10-22 22:24:51,413 : replica 0:  replica 0 -> replica 1 for slot 48
+2017-10-22 22:24:51,423 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,423 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 48
+2017-10-22 22:24:51,423 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 48
+2017-10-22 22:24:51,433 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,433 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 48
+2017-10-22 22:24:51,433 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 48
+2017-10-22 22:24:51,433 : replica 2: result from tail  -> client 0 is sent for slot 48
+2017-10-22 22:24:51,438 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,438 : Replica 1 Reshult_shuttle cached for slot 48
+2017-10-22 22:24:51,438 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,438 : Client 0: Result validation success after receiving result from tail for rid 30
+2017-10-22 22:24:51,438 : Client 0: Client 0 result arrived before time - out for rid 30
+2017-10-22 22:24:51,438 : Client 0: Client 0 sent request number 31 opration put('k1','kv1') to replica 0
+2017-10-22 22:24:51,443 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,443 : Replica 0 Reshult_shuttle cached for slot 48
+2017-10-22 22:24:51,443 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,443 : replica 0:  client 0 -head signature success for rid 31
+2017-10-22 22:24:51,448 : replica 0:  replica 0 -> replica 1 for slot 49
+2017-10-22 22:24:51,456 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,456 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 49
+2017-10-22 22:24:51,460 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 49
+2017-10-22 22:24:51,465 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,466 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 49
+2017-10-22 22:24:51,468 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 49
+2017-10-22 22:24:51,468 : replica 2: result from tail  -> client 0 is sent for slot 49
+2017-10-22 22:24:51,468 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,468 : Replica 1 Reshult_shuttle cached for slot 49
+2017-10-22 22:24:51,468 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,473 : Client 0: Result validation success after receiving result from tail for rid 31
+2017-10-22 22:24:51,473 : Client 0: Client 0 result arrived before time - out for rid 31
+2017-10-22 22:24:51,473 : Client 0: Client 0 sent request number 32 opration append('k1',' kv2') to replica 0
+2017-10-22 22:24:51,473 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,473 : Replica 0 Reshult_shuttle cached for slot 49
+2017-10-22 22:24:51,473 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,478 : replica 0:  client 0 -head signature success for rid 32
+2017-10-22 22:24:51,478 : replica 0:  replica 0 -> replica 1 for slot 50
+2017-10-22 22:24:51,488 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,488 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 50
+2017-10-22 22:24:51,488 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 50
+2017-10-22 22:24:51,498 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,498 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 50
+2017-10-22 22:24:51,498 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 50
+2017-10-22 22:24:51,498 : replica 2: result from tail  -> client 0 is sent for slot 50
+2017-10-22 22:24:51,503 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,503 : Replica 1 Reshult_shuttle cached for slot 50
+2017-10-22 22:24:51,503 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,503 : Client 0: Result validation success after receiving result from tail for rid 32
+2017-10-22 22:24:51,503 : Client 0: Client 0 result arrived before time - out for rid 32
+2017-10-22 22:24:51,503 : Client 0: Client 0 sent request number 33 opration slice('k1','0:2') to replica 0
+2017-10-22 22:24:51,508 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,508 : Replica 0 Reshult_shuttle cached for slot 50
+2017-10-22 22:24:51,508 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,508 : replica 0:  client 0 -head signature success for rid 33
+2017-10-22 22:24:51,513 : replica 0:  replica 0 -> replica 1 for slot 51
+2017-10-22 22:24:51,518 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,518 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 51
+2017-10-22 22:24:51,523 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 51
+2017-10-22 22:24:51,528 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,528 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 51
+2017-10-22 22:24:51,533 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 51
+2017-10-22 22:24:51,533 : replica 2: result from tail  -> client 0 is sent for slot 51
+2017-10-22 22:24:51,533 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,538 : Replica 1 Reshult_shuttle cached for slot 51
+2017-10-22 22:24:51,538 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,538 : Client 0: Result validation success after receiving result from tail for rid 33
+2017-10-22 22:24:51,538 : Client 0: Client 0 result arrived before time - out for rid 33
+2017-10-22 22:24:51,538 : Client 0: Client 0 sent request number 34 opration get('k1') to replica 0
+2017-10-22 22:24:51,538 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,543 : Replica 0 Reshult_shuttle cached for slot 51
+2017-10-22 22:24:51,543 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,543 : replica 0:  client 0 -head signature success for rid 34
+2017-10-22 22:24:51,548 : replica 0:  replica 0 -> replica 1 for slot 52
+2017-10-22 22:24:51,556 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,556 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 52
+2017-10-22 22:24:51,560 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 52
+2017-10-22 22:24:51,565 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,566 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 52
+2017-10-22 22:24:51,568 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 52
+2017-10-22 22:24:51,568 : replica 2: result from tail  -> client 0 is sent for slot 52
+2017-10-22 22:24:51,568 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,568 : Replica 1 Reshult_shuttle cached for slot 52
+2017-10-22 22:24:51,573 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,573 : Client 0: Result validation success after receiving result from tail for rid 34
+2017-10-22 22:24:51,573 : Client 0: Client 0 result arrived before time - out for rid 34
+2017-10-22 22:24:51,573 : Client 0: Client 0 sent request number 35 opration put('k2','v1') to replica 0
+2017-10-22 22:24:51,573 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,573 : Replica 0 Reshult_shuttle cached for slot 52
+2017-10-22 22:24:51,573 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,578 : replica 0:  client 0 -head signature success for rid 35
+2017-10-22 22:24:51,578 : replica 0:  replica 0 -> replica 1 for slot 53
+2017-10-22 22:24:51,588 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,593 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 53
+2017-10-22 22:24:51,593 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 53
+2017-10-22 22:24:51,598 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,598 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 53
+2017-10-22 22:24:51,603 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 53
+2017-10-22 22:24:51,603 : replica 2: result from tail  -> client 0 is sent for slot 53
+2017-10-22 22:24:51,603 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,608 : Replica 1 Reshult_shuttle cached for slot 53
+2017-10-22 22:24:51,608 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,608 : Client 0: Result validation success after receiving result from tail for rid 35
+2017-10-22 22:24:51,608 : Client 0: Client 0 result arrived before time - out for rid 35
+2017-10-22 22:24:51,608 : Client 0: Client 0 sent request number 36 opration append('k2',' v2') to replica 0
+2017-10-22 22:24:51,608 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,613 : Replica 0 Reshult_shuttle cached for slot 53
+2017-10-22 22:24:51,613 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,613 : replica 0:  client 0 -head signature success for rid 36
+2017-10-22 22:24:51,618 : replica 0:  replica 0 -> replica 1 for slot 54
+2017-10-22 22:24:51,623 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,623 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 54
+2017-10-22 22:24:51,628 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 54
+2017-10-22 22:24:51,633 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,638 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 54
+2017-10-22 22:24:51,638 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 54
+2017-10-22 22:24:51,638 : replica 2: result from tail  -> client 0 is sent for slot 54
+2017-10-22 22:24:51,643 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,643 : Replica 1 Reshult_shuttle cached for slot 54
+2017-10-22 22:24:51,643 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,643 : Client 0: Result validation success after receiving result from tail for rid 36
+2017-10-22 22:24:51,643 : Client 0: Client 0 result arrived before time - out for rid 36
+2017-10-22 22:24:51,643 : Client 0: Client 0 sent request number 37 opration slice('k2','0:1') to replica 0
+2017-10-22 22:24:51,648 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,648 : Replica 0 Reshult_shuttle cached for slot 54
+2017-10-22 22:24:51,648 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,648 : replica 0:  client 0 -head signature success for rid 37
+2017-10-22 22:24:51,653 : replica 0:  replica 0 -> replica 1 for slot 55
+2017-10-22 22:24:51,661 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,662 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 55
+2017-10-22 22:24:51,665 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 55
+2017-10-22 22:24:51,668 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,668 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 55
+2017-10-22 22:24:51,673 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 55
+2017-10-22 22:24:51,673 : replica 2: result from tail  -> client 0 is sent for slot 55
+2017-10-22 22:24:51,673 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,673 : Replica 1 Reshult_shuttle cached for slot 55
+2017-10-22 22:24:51,678 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,678 : Client 0: Result validation success after receiving result from tail for rid 37
+2017-10-22 22:24:51,678 : Client 0: Client 0 result arrived before time - out for rid 37
+2017-10-22 22:24:51,678 : Client 0: Client 0 sent request number 38 opration get('k2') to replica 0
+2017-10-22 22:24:51,678 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,678 : Replica 0 Reshult_shuttle cached for slot 55
+2017-10-22 22:24:51,678 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,683 : replica 0:  client 0 -head signature success for rid 38
+2017-10-22 22:24:51,683 : replica 0:  replica 0 -> replica 1 for slot 56
+2017-10-22 22:24:51,693 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,693 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 56
+2017-10-22 22:24:51,698 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 56
+2017-10-22 22:24:51,703 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,703 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 56
+2017-10-22 22:24:51,703 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 56
+2017-10-22 22:24:51,708 : replica 2: result from tail  -> client 0 is sent for slot 56
+2017-10-22 22:24:51,708 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,708 : Replica 1 Reshult_shuttle cached for slot 56
+2017-10-22 22:24:51,708 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,708 : Client 0: Result validation success after receiving result from tail for rid 38
+2017-10-22 22:24:51,708 : Client 0: Client 0 result arrived before time - out for rid 38
+2017-10-22 22:24:51,713 : Client 0: Client 0 sent request number 39 opration put('k1','kv1') to replica 0
+2017-10-22 22:24:51,713 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,713 : Replica 0 Reshult_shuttle cached for slot 56
+2017-10-22 22:24:51,713 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,718 : replica 0:  client 0 -head signature success for rid 39
+2017-10-22 22:24:51,718 : replica 0:  replica 0 -> replica 1 for slot 57
+2017-10-22 22:24:51,723 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,728 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 57
+2017-10-22 22:24:51,728 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 57
+2017-10-22 22:24:51,733 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,738 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 57
+2017-10-22 22:24:51,738 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 57
+2017-10-22 22:24:51,738 : replica 2: result from tail  -> client 0 is sent for slot 57
+2017-10-22 22:24:51,743 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,743 : Replica 1 Reshult_shuttle cached for slot 57
+2017-10-22 22:24:51,743 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,743 : Client 0: Result validation success after receiving result from tail for rid 39
+2017-10-22 22:24:51,743 : Client 0: Client 0 result arrived before time - out for rid 39
+2017-10-22 22:24:51,743 : Client 0: Client 0 sent request number 40 opration append('k1',' kv2') to replica 0
+2017-10-22 22:24:51,743 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,748 : Replica 0 Reshult_shuttle cached for slot 57
+2017-10-22 22:24:51,748 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,748 : replica 0:  client 0 -head signature success for rid 40
+2017-10-22 22:24:51,753 : replica 0:  replica 0 -> replica 1 for slot 58
+2017-10-22 22:24:51,761 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,761 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 58
+2017-10-22 22:24:51,765 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 58
+2017-10-22 22:24:51,768 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,768 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 58
+2017-10-22 22:24:51,773 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 58
+2017-10-22 22:24:51,773 : replica 2: result from tail  -> client 0 is sent for slot 58
+2017-10-22 22:24:51,773 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,773 : Replica 1 Reshult_shuttle cached for slot 58
+2017-10-22 22:24:51,773 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,778 : Client 0: Result validation success after receiving result from tail for rid 40
+2017-10-22 22:24:51,778 : Client 0: Client 0 result arrived before time - out for rid 40
+2017-10-22 22:24:51,778 : Client 0: Client 0 sent request number 41 opration slice('k1','0:2') to replica 0
+2017-10-22 22:24:51,778 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,778 : Replica 0 Reshult_shuttle cached for slot 58
+2017-10-22 22:24:51,778 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,783 : replica 0:  client 0 -head signature success for rid 41
+2017-10-22 22:24:51,783 : replica 0:  replica 0 -> replica 1 for slot 59
+2017-10-22 22:24:51,793 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,793 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 59
+2017-10-22 22:24:51,798 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 59
+2017-10-22 22:24:51,803 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,803 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 59
+2017-10-22 22:24:51,803 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 59
+2017-10-22 22:24:51,808 : replica 2: result from tail  -> client 0 is sent for slot 59
+2017-10-22 22:24:51,808 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,808 : Replica 1 Reshult_shuttle cached for slot 59
+2017-10-22 22:24:51,808 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,808 : Client 0: Result validation success after receiving result from tail for rid 41
+2017-10-22 22:24:51,808 : Client 0: Client 0 result arrived before time - out for rid 41
+2017-10-22 22:24:51,808 : Client 0: Client 0 sent request number 42 opration get('k1') to replica 0
+2017-10-22 22:24:51,813 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,813 : Replica 0 Reshult_shuttle cached for slot 59
+2017-10-22 22:24:51,813 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,813 : replica 0:  client 0 -head signature success for rid 42
+2017-10-22 22:24:51,818 : replica 0:  replica 0 -> replica 1 for slot 60
+2017-10-22 22:24:51,823 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,823 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 60
+2017-10-22 22:24:51,828 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 60
+2017-10-22 22:24:51,833 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,838 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 60
+2017-10-22 22:24:51,838 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 60
+2017-10-22 22:24:51,838 : replica 2: result from tail  -> client 0 is sent for slot 60
+2017-10-22 22:24:51,843 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,843 : Replica 1 Reshult_shuttle cached for slot 60
+2017-10-22 22:24:51,843 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,843 : Client 0: Result validation success after receiving result from tail for rid 42
+2017-10-22 22:24:51,843 : Client 0: Client 0 result arrived before time - out for rid 42
+2017-10-22 22:24:51,843 : Client 0: Client 0 sent request number 43 opration put('k2','v1') to replica 0
+2017-10-22 22:24:51,843 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,848 : Replica 0 Reshult_shuttle cached for slot 60
+2017-10-22 22:24:51,848 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,848 : replica 0:  client 0 -head signature success for rid 43
+2017-10-22 22:24:51,853 : replica 0:  replica 0 -> replica 1 for slot 61
+2017-10-22 22:24:51,861 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,862 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 61
+2017-10-22 22:24:51,865 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 61
+2017-10-22 22:24:51,868 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,868 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 61
+2017-10-22 22:24:51,873 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 61
+2017-10-22 22:24:51,873 : replica 2: result from tail  -> client 0 is sent for slot 61
+2017-10-22 22:24:51,873 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,873 : Replica 1 Reshult_shuttle cached for slot 61
+2017-10-22 22:24:51,878 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,878 : Client 0: Result validation success after receiving result from tail for rid 43
+2017-10-22 22:24:51,878 : Client 0: Client 0 result arrived before time - out for rid 43
+2017-10-22 22:24:51,878 : Client 0: Client 0 sent request number 44 opration append('k2',' v2') to replica 0
+2017-10-22 22:24:51,878 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,878 : Replica 0 Reshult_shuttle cached for slot 61
+2017-10-22 22:24:51,883 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,883 : replica 0:  client 0 -head signature success for rid 44
+2017-10-22 22:24:51,883 : replica 0:  replica 0 -> replica 1 for slot 62
+2017-10-22 22:24:51,893 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,893 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 62
+2017-10-22 22:24:51,898 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 62
+2017-10-22 22:24:51,903 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,903 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 62
+2017-10-22 22:24:51,908 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 62
+2017-10-22 22:24:51,908 : replica 2: result from tail  -> client 0 is sent for slot 62
+2017-10-22 22:24:51,908 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,908 : Replica 1 Reshult_shuttle cached for slot 62
+2017-10-22 22:24:51,908 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,908 : Client 0: Result validation success after receiving result from tail for rid 44
+2017-10-22 22:24:51,908 : Client 0: Client 0 result arrived before time - out for rid 44
+2017-10-22 22:24:51,913 : Client 0: Client 0 sent request number 45 opration slice('k2','0:1') to replica 0
+2017-10-22 22:24:51,913 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,913 : Replica 0 Reshult_shuttle cached for slot 62
+2017-10-22 22:24:51,913 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,918 : replica 0:  client 0 -head signature success for rid 45
+2017-10-22 22:24:51,918 : replica 0:  replica 0 -> replica 1 for slot 63
+2017-10-22 22:24:51,928 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,928 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 63
+2017-10-22 22:24:51,933 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 63
+2017-10-22 22:24:51,938 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,938 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 63
+2017-10-22 22:24:51,943 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 63
+2017-10-22 22:24:51,943 : replica 2: result from tail  -> client 0 is sent for slot 63
+2017-10-22 22:24:51,943 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,943 : Replica 1 Reshult_shuttle cached for slot 63
+2017-10-22 22:24:51,943 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,948 : Client 0: Result validation success after receiving result from tail for rid 45
+2017-10-22 22:24:51,948 : Client 0: Client 0 result arrived before time - out for rid 45
+2017-10-22 22:24:51,948 : Client 0: Client 0 sent request number 46 opration get('k2') to replica 0
+2017-10-22 22:24:51,948 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,948 : Replica 0 Reshult_shuttle cached for slot 63
+2017-10-22 22:24:51,948 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,955 : replica 0:  client 0 -head signature success for rid 46
+2017-10-22 22:24:51,956 : replica 0:  replica 0 -> replica 1 for slot 64
+2017-10-22 22:24:51,965 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,965 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 64
+2017-10-22 22:24:51,968 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 64
+2017-10-22 22:24:51,973 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:51,973 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 64
+2017-10-22 22:24:51,973 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 64
+2017-10-22 22:24:51,978 : replica 2: result from tail  -> client 0 is sent for slot 64
+2017-10-22 22:24:51,978 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:51,978 : Replica 1 Reshult_shuttle cached for slot 64
+2017-10-22 22:24:51,978 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:51,978 : Client 0: Result validation success after receiving result from tail for rid 46
+2017-10-22 22:24:51,978 : Client 0: Client 0 result arrived before time - out for rid 46
+2017-10-22 22:24:51,983 : Client 0: Client 0 sent request number 47 opration put('k1','kv1') to replica 0
+2017-10-22 22:24:51,983 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:51,983 : Replica 0 Reshult_shuttle cached for slot 64
+2017-10-22 22:24:51,983 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:51,988 : replica 0:  client 0 -head signature success for rid 47
+2017-10-22 22:24:51,988 : replica 0:  replica 0 -> replica 1 for slot 65
+2017-10-22 22:24:51,998 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:51,998 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 65
+2017-10-22 22:24:52,003 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 65
+2017-10-22 22:24:52,008 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,008 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 65
+2017-10-22 22:24:52,008 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 65
+2017-10-22 22:24:52,013 : replica 2: result from tail  -> client 0 is sent for slot 65
+2017-10-22 22:24:52,013 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,013 : Replica 1 Reshult_shuttle cached for slot 65
+2017-10-22 22:24:52,013 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,013 : Client 0: Result validation success after receiving result from tail for rid 47
+2017-10-22 22:24:52,013 : Client 0: Client 0 result arrived before time - out for rid 47
+2017-10-22 22:24:52,013 : Client 0: Client 0 sent request number 48 opration append('k1',' kv2') to replica 0
+2017-10-22 22:24:52,018 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,018 : Replica 0 Reshult_shuttle cached for slot 65
+2017-10-22 22:24:52,018 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,023 : replica 0:  client 0 -head signature success for rid 48
+2017-10-22 22:24:52,023 : replica 0:  replica 0 -> replica 1 for slot 66
+2017-10-22 22:24:52,033 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,033 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 66
+2017-10-22 22:24:52,033 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 66
+2017-10-22 22:24:52,043 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,043 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 66
+2017-10-22 22:24:52,043 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 66
+2017-10-22 22:24:52,043 : replica 2: result from tail  -> client 0 is sent for slot 66
+2017-10-22 22:24:52,048 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,048 : Replica 1 Reshult_shuttle cached for slot 66
+2017-10-22 22:24:52,048 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,048 : Client 0: Result validation success after receiving result from tail for rid 48
+2017-10-22 22:24:52,048 : Client 0: Client 0 result arrived before time - out for rid 48
+2017-10-22 22:24:52,048 : Client 0: Client 0 sent request number 49 opration slice('k1','0:2') to replica 0
+2017-10-22 22:24:52,054 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,055 : Replica 0 Reshult_shuttle cached for slot 66
+2017-10-22 22:24:52,056 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,058 : replica 0:  client 0 -head signature success for rid 49
+2017-10-22 22:24:52,060 : replica 0:  replica 0 -> replica 1 for slot 67
+2017-10-22 22:24:52,068 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,068 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 67
+2017-10-22 22:24:52,068 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 67
+2017-10-22 22:24:52,078 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,078 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 67
+2017-10-22 22:24:52,078 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 67
+2017-10-22 22:24:52,078 : replica 2: result from tail  -> client 0 is sent for slot 67
+2017-10-22 22:24:52,083 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,083 : Replica 1 Reshult_shuttle cached for slot 67
+2017-10-22 22:24:52,083 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,083 : Client 0: Result validation success after receiving result from tail for rid 49
+2017-10-22 22:24:52,083 : Client 0: Client 0 result arrived before time - out for rid 49
+2017-10-22 22:24:52,083 : Client 0: Client 0 sent request number 50 opration get('k1') to replica 0
+2017-10-22 22:24:52,088 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,088 : Replica 0 Reshult_shuttle cached for slot 67
+2017-10-22 22:24:52,088 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,093 : replica 0:  client 0 -head signature success for rid 50
+2017-10-22 22:24:52,093 : replica 0:  replica 0 -> replica 1 for slot 68
+2017-10-22 22:24:52,103 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,103 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 68
+2017-10-22 22:24:52,103 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 68
+2017-10-22 22:24:52,113 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,113 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 68
+2017-10-22 22:24:52,113 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 68
+2017-10-22 22:24:52,113 : replica 2: result from tail  -> client 0 is sent for slot 68
+2017-10-22 22:24:52,118 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,118 : Replica 1 Reshult_shuttle cached for slot 68
+2017-10-22 22:24:52,118 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,118 : Client 0: Result validation success after receiving result from tail for rid 50
+2017-10-22 22:24:52,118 : Client 0: Client 0 result arrived before time - out for rid 50
+2017-10-22 22:24:52,118 : Client 0: Client 0 sent request number 51 opration put('k2','v1') to replica 0
+2017-10-22 22:24:52,123 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,123 : Replica 0 Reshult_shuttle cached for slot 68
+2017-10-22 22:24:52,123 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,123 : replica 0:  client 0 -head signature success for rid 51
+2017-10-22 22:24:52,128 : replica 0:  replica 0 -> replica 1 for slot 69
+2017-10-22 22:24:52,133 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,133 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 69
+2017-10-22 22:24:52,138 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 69
+2017-10-22 22:24:52,148 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,148 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 69
+2017-10-22 22:24:52,148 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 69
+2017-10-22 22:24:52,148 : replica 2: result from tail  -> client 0 is sent for slot 69
+2017-10-22 22:24:52,153 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,154 : Replica 1 Reshult_shuttle cached for slot 69
+2017-10-22 22:24:52,155 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,156 : Client 0: Result validation success after receiving result from tail for rid 51
+2017-10-22 22:24:52,156 : Client 0: Client 0 result arrived before time - out for rid 51
+2017-10-22 22:24:52,157 : Client 0: Client 0 sent request number 52 opration append('k2',' v2') to replica 0
+2017-10-22 22:24:52,158 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,158 : Replica 0 Reshult_shuttle cached for slot 69
+2017-10-22 22:24:52,159 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,162 : replica 0:  client 0 -head signature success for rid 52
+2017-10-22 22:24:52,164 : replica 0:  replica 0 -> replica 1 for slot 70
+2017-10-22 22:24:52,168 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,173 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 70
+2017-10-22 22:24:52,173 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 70
+2017-10-22 22:24:52,183 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,183 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 70
+2017-10-22 22:24:52,183 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 70
+2017-10-22 22:24:52,188 : replica 2: result from tail  -> client 0 is sent for slot 70
+2017-10-22 22:24:52,188 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,188 : Replica 1 Reshult_shuttle cached for slot 70
+2017-10-22 22:24:52,188 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,188 : Client 0: Result validation success after receiving result from tail for rid 52
+2017-10-22 22:24:52,188 : Client 0: Client 0 result arrived before time - out for rid 52
+2017-10-22 22:24:52,188 : Client 0: Client 0 sent request number 53 opration slice('k2','0:1') to replica 0
+2017-10-22 22:24:52,193 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,193 : Replica 0 Reshult_shuttle cached for slot 70
+2017-10-22 22:24:52,193 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,198 : replica 0:  client 0 -head signature success for rid 53
+2017-10-22 22:24:52,198 : replica 0:  replica 0 -> replica 1 for slot 71
+2017-10-22 22:24:52,208 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,208 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 71
+2017-10-22 22:24:52,208 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 71
+2017-10-22 22:24:52,218 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,218 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 71
+2017-10-22 22:24:52,218 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 71
+2017-10-22 22:24:52,218 : replica 2: result from tail  -> client 0 is sent for slot 71
+2017-10-22 22:24:52,223 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,223 : Replica 1 Reshult_shuttle cached for slot 71
+2017-10-22 22:24:52,223 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,223 : Client 0: Result validation success after receiving result from tail for rid 53
+2017-10-22 22:24:52,223 : Client 0: Client 0 result arrived before time - out for rid 53
+2017-10-22 22:24:52,223 : Client 0: Client 0 sent request number 54 opration get('k2') to replica 0
+2017-10-22 22:24:52,228 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,228 : Replica 0 Reshult_shuttle cached for slot 71
+2017-10-22 22:24:52,228 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,228 : replica 0:  client 0 -head signature success for rid 54
+2017-10-22 22:24:52,233 : replica 0:  replica 0 -> replica 1 for slot 72
+2017-10-22 22:24:52,238 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,243 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 72
+2017-10-22 22:24:52,243 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 72
+2017-10-22 22:24:52,253 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,253 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 72
+2017-10-22 22:24:52,256 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 72
+2017-10-22 22:24:52,257 : replica 2: result from tail  -> client 0 is sent for slot 72
+2017-10-22 22:24:52,258 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,259 : Replica 1 Reshult_shuttle cached for slot 72
+2017-10-22 22:24:52,260 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,261 : Client 0: Result validation success after receiving result from tail for rid 54
+2017-10-22 22:24:52,261 : Client 0: Client 0 result arrived before time - out for rid 54
+2017-10-22 22:24:52,262 : Client 0: Client 0 sent request number 55 opration put('k1','kv1') to replica 0
+2017-10-22 22:24:52,263 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,264 : Replica 0 Reshult_shuttle cached for slot 72
+2017-10-22 22:24:52,264 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,267 : replica 0:  client 0 -head signature success for rid 55
+2017-10-22 22:24:52,269 : replica 0:  replica 0 -> replica 1 for slot 73
+2017-10-22 22:24:52,274 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,274 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 73
+2017-10-22 22:24:52,279 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 73
+2017-10-22 22:24:52,284 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,289 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 73
+2017-10-22 22:24:52,289 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 73
+2017-10-22 22:24:52,289 : replica 2: result from tail  -> client 0 is sent for slot 73
+2017-10-22 22:24:52,294 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,294 : Replica 1 Reshult_shuttle cached for slot 73
+2017-10-22 22:24:52,294 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,294 : Client 0: Result validation success after receiving result from tail for rid 55
+2017-10-22 22:24:52,294 : Client 0: Client 0 result arrived before time - out for rid 55
+2017-10-22 22:24:52,294 : Client 0: Client 0 sent request number 56 opration append('k1',' kv2') to replica 0
+2017-10-22 22:24:52,294 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,299 : Replica 0 Reshult_shuttle cached for slot 73
+2017-10-22 22:24:52,299 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,299 : replica 0:  client 0 -head signature success for rid 56
+2017-10-22 22:24:52,304 : replica 0:  replica 0 -> replica 1 for slot 74
+2017-10-22 22:24:52,309 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,309 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 74
+2017-10-22 22:24:52,314 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 74
+2017-10-22 22:24:52,319 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,319 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 74
+2017-10-22 22:24:52,324 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 74
+2017-10-22 22:24:52,324 : replica 2: result from tail  -> client 0 is sent for slot 74
+2017-10-22 22:24:52,324 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,329 : Replica 1 Reshult_shuttle cached for slot 74
+2017-10-22 22:24:52,329 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,329 : Client 0: Result validation success after receiving result from tail for rid 56
+2017-10-22 22:24:52,329 : Client 0: Client 0 result arrived before time - out for rid 56
+2017-10-22 22:24:52,329 : Client 0: Client 0 sent request number 57 opration slice('k1','0:2') to replica 0
+2017-10-22 22:24:52,329 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,334 : Replica 0 Reshult_shuttle cached for slot 74
+2017-10-22 22:24:52,334 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,334 : replica 0:  client 0 -head signature success for rid 57
+2017-10-22 22:24:52,339 : replica 0:  replica 0 -> replica 1 for slot 75
+2017-10-22 22:24:52,344 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,344 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 75
+2017-10-22 22:24:52,349 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 75
+2017-10-22 22:24:52,359 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,359 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 75
+2017-10-22 22:24:52,362 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 75
+2017-10-22 22:24:52,363 : replica 2: result from tail  -> client 0 is sent for slot 75
+2017-10-22 22:24:52,364 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,364 : Replica 1 Reshult_shuttle cached for slot 75
+2017-10-22 22:24:52,366 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,366 : Client 0: Result validation success after receiving result from tail for rid 57
+2017-10-22 22:24:52,367 : Client 0: Client 0 result arrived before time - out for rid 57
+2017-10-22 22:24:52,367 : Client 0: Client 0 sent request number 58 opration get('k1') to replica 0
+2017-10-22 22:24:52,368 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,369 : Replica 0 Reshult_shuttle cached for slot 75
+2017-10-22 22:24:52,369 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,369 : replica 0:  client 0 -head signature success for rid 58
+2017-10-22 22:24:52,374 : replica 0:  replica 0 -> replica 1 for slot 76
+2017-10-22 22:24:52,379 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,379 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 76
+2017-10-22 22:24:52,384 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 76
+2017-10-22 22:24:52,389 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,394 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 76
+2017-10-22 22:24:52,394 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 76
+2017-10-22 22:24:52,394 : replica 2: result from tail  -> client 0 is sent for slot 76
+2017-10-22 22:24:52,399 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,399 : Replica 1 Reshult_shuttle cached for slot 76
+2017-10-22 22:24:52,399 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,399 : Client 0: Result validation success after receiving result from tail for rid 58
+2017-10-22 22:24:52,399 : Client 0: Client 0 result arrived before time - out for rid 58
+2017-10-22 22:24:52,399 : Client 0: Client 0 sent request number 59 opration put('k2','v1') to replica 0
+2017-10-22 22:24:52,399 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,404 : Replica 0 Reshult_shuttle cached for slot 76
+2017-10-22 22:24:52,404 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,404 : replica 0:  client 0 -head signature success for rid 59
+2017-10-22 22:24:52,409 : replica 0:  replica 0 -> replica 1 for slot 77
+2017-10-22 22:24:52,414 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,414 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 77
+2017-10-22 22:24:52,419 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 77
+2017-10-22 22:24:52,429 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,429 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 77
+2017-10-22 22:24:52,429 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 77
+2017-10-22 22:24:52,429 : replica 2: result from tail  -> client 0 is sent for slot 77
+2017-10-22 22:24:52,434 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,434 : Replica 1 Reshult_shuttle cached for slot 77
+2017-10-22 22:24:52,434 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,434 : Client 0: Result validation success after receiving result from tail for rid 59
+2017-10-22 22:24:52,434 : Client 0: Client 0 result arrived before time - out for rid 59
+2017-10-22 22:24:52,434 : Client 0: Client 0 sent request number 60 opration append('k2',' v2') to replica 0
+2017-10-22 22:24:52,439 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,439 : Replica 0 Reshult_shuttle cached for slot 77
+2017-10-22 22:24:52,439 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,439 : replica 0:  client 0 -head signature success for rid 60
+2017-10-22 22:24:52,444 : replica 0:  replica 0 -> replica 1 for slot 78
+2017-10-22 22:24:52,454 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,454 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 78
+2017-10-22 22:24:52,458 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 78
+2017-10-22 22:24:52,464 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,465 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 78
+2017-10-22 22:24:52,467 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 78
+2017-10-22 22:24:52,469 : replica 2: result from tail  -> client 0 is sent for slot 78
+2017-10-22 22:24:52,469 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,469 : Replica 1 Reshult_shuttle cached for slot 78
+2017-10-22 22:24:52,469 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,469 : Client 0: Result validation success after receiving result from tail for rid 60
+2017-10-22 22:24:52,469 : Client 0: Client 0 result arrived before time - out for rid 60
+2017-10-22 22:24:52,469 : Client 0: Client 0 sent request number 61 opration slice('k2','0:1') to replica 0
+2017-10-22 22:24:52,474 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,474 : Replica 0 Reshult_shuttle cached for slot 78
+2017-10-22 22:24:52,474 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,474 : replica 0:  client 0 -head signature success for rid 61
+2017-10-22 22:24:52,479 : replica 0:  replica 0 -> replica 1 for slot 79
+2017-10-22 22:24:52,489 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,489 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 79
+2017-10-22 22:24:52,489 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 79
+2017-10-22 22:24:52,499 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,499 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 79
+2017-10-22 22:24:52,499 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 79
+2017-10-22 22:24:52,504 : replica 2: result from tail  -> client 0 is sent for slot 79
+2017-10-22 22:24:52,504 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,504 : Replica 1 Reshult_shuttle cached for slot 79
+2017-10-22 22:24:52,504 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,504 : Client 0: Result validation success after receiving result from tail for rid 61
+2017-10-22 22:24:52,504 : Client 0: Client 0 result arrived before time - out for rid 61
+2017-10-22 22:24:52,504 : Client 0: Client 0 sent request number 62 opration get('k2') to replica 0
+2017-10-22 22:24:52,509 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,509 : Replica 0 Reshult_shuttle cached for slot 79
+2017-10-22 22:24:52,509 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,514 : replica 0:  client 0 -head signature success for rid 62
+2017-10-22 22:24:52,514 : replica 0:  replica 0 -> replica 1 for slot 80
+2017-10-22 22:24:52,524 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,524 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 80
+2017-10-22 22:24:52,524 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 80
+2017-10-22 22:24:52,534 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,534 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 80
+2017-10-22 22:24:52,534 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 80
+2017-10-22 22:24:52,539 : replica 2: result from tail  -> client 0 is sent for slot 80
+2017-10-22 22:24:52,539 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,539 : Replica 1 Reshult_shuttle cached for slot 80
+2017-10-22 22:24:52,539 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,539 : Client 0: Result validation success after receiving result from tail for rid 62
+2017-10-22 22:24:52,539 : Client 0: Client 0 result arrived before time - out for rid 62
+2017-10-22 22:24:52,544 : Client 0: Client 0 sent request number 63 opration put('k1','kv1') to replica 0
+2017-10-22 22:24:52,544 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,544 : Replica 0 Reshult_shuttle cached for slot 80
+2017-10-22 22:24:52,544 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,549 : replica 0:  client 0 -head signature success for rid 63
+2017-10-22 22:24:52,549 : replica 0:  replica 0 -> replica 1 for slot 81
+2017-10-22 22:24:52,560 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,560 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 81
+2017-10-22 22:24:52,564 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 81
+2017-10-22 22:24:52,569 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,569 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 81
+2017-10-22 22:24:52,574 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 81
+2017-10-22 22:24:52,574 : replica 2: result from tail  -> client 0 is sent for slot 81
+2017-10-22 22:24:52,574 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,574 : Replica 1 Reshult_shuttle cached for slot 81
+2017-10-22 22:24:52,574 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,574 : Client 0: Result validation success after receiving result from tail for rid 63
+2017-10-22 22:24:52,574 : Client 0: Client 0 result arrived before time - out for rid 63
+2017-10-22 22:24:52,579 : Client 0: Client 0 sent request number 64 opration append('k1',' kv2') to replica 0
+2017-10-22 22:24:52,579 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,579 : Replica 0 Reshult_shuttle cached for slot 81
+2017-10-22 22:24:52,579 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,584 : replica 0:  client 0 -head signature success for rid 64
+2017-10-22 22:24:52,584 : replica 0:  replica 0 -> replica 1 for slot 82
+2017-10-22 22:24:52,594 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,594 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 82
+2017-10-22 22:24:52,599 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 82
+2017-10-22 22:24:52,604 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,604 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 82
+2017-10-22 22:24:52,609 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 82
+2017-10-22 22:24:52,609 : replica 2: result from tail  -> client 0 is sent for slot 82
+2017-10-22 22:24:52,609 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,609 : Replica 1 Reshult_shuttle cached for slot 82
+2017-10-22 22:24:52,609 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,609 : Client 0: Result validation success after receiving result from tail for rid 64
+2017-10-22 22:24:52,614 : Client 0: Client 0 result arrived before time - out for rid 64
+2017-10-22 22:24:52,614 : Client 0: Client 0 sent request number 65 opration slice('k1','0:2') to replica 0
+2017-10-22 22:24:52,614 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,614 : Replica 0 Reshult_shuttle cached for slot 82
+2017-10-22 22:24:52,614 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,619 : replica 0:  client 0 -head signature success for rid 65
+2017-10-22 22:24:52,619 : replica 0:  replica 0 -> replica 1 for slot 83
+2017-10-22 22:24:52,629 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,629 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 83
+2017-10-22 22:24:52,634 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 83
+2017-10-22 22:24:52,639 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,639 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 83
+2017-10-22 22:24:52,644 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 83
+2017-10-22 22:24:52,644 : replica 2: result from tail  -> client 0 is sent for slot 83
+2017-10-22 22:24:52,644 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,644 : Replica 1 Reshult_shuttle cached for slot 83
+2017-10-22 22:24:52,649 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,649 : Client 0: Result validation success after receiving result from tail for rid 65
+2017-10-22 22:24:52,649 : Client 0: Client 0 result arrived before time - out for rid 65
+2017-10-22 22:24:52,649 : Client 0: Client 0 sent request number 66 opration get('k1') to replica 0
+2017-10-22 22:24:52,649 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,649 : Replica 0 Reshult_shuttle cached for slot 83
+2017-10-22 22:24:52,654 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,656 : replica 0:  client 0 -head signature success for rid 66
+2017-10-22 22:24:52,658 : replica 0:  replica 0 -> replica 1 for slot 84
+2017-10-22 22:24:52,667 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,667 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 84
+2017-10-22 22:24:52,669 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 84
+2017-10-22 22:24:52,674 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,674 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 84
+2017-10-22 22:24:52,679 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 84
+2017-10-22 22:24:52,679 : replica 2: result from tail  -> client 0 is sent for slot 84
+2017-10-22 22:24:52,679 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,679 : Replica 1 Reshult_shuttle cached for slot 84
+2017-10-22 22:24:52,684 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,684 : Client 0: Result validation success after receiving result from tail for rid 66
+2017-10-22 22:24:52,684 : Client 0: Client 0 result arrived before time - out for rid 66
+2017-10-22 22:24:52,684 : Client 0: Client 0 sent request number 67 opration put('k2','v1') to replica 0
+2017-10-22 22:24:52,684 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,684 : Replica 0 Reshult_shuttle cached for slot 84
+2017-10-22 22:24:52,684 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,689 : replica 0:  client 0 -head signature success for rid 67
+2017-10-22 22:24:52,689 : replica 0:  replica 0 -> replica 1 for slot 85
+2017-10-22 22:24:52,699 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,699 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 85
+2017-10-22 22:24:52,704 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 85
+2017-10-22 22:24:52,709 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,709 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 85
+2017-10-22 22:24:52,714 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 85
+2017-10-22 22:24:52,714 : replica 2: result from tail  -> client 0 is sent for slot 85
+2017-10-22 22:24:52,714 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,719 : Replica 1 Reshult_shuttle cached for slot 85
+2017-10-22 22:24:52,719 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,719 : Client 0: Result validation success after receiving result from tail for rid 67
+2017-10-22 22:24:52,719 : Client 0: Client 0 result arrived before time - out for rid 67
+2017-10-22 22:24:52,719 : Client 0: Client 0 sent request number 68 opration append('k2',' v2') to replica 0
+2017-10-22 22:24:52,719 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,724 : Replica 0 Reshult_shuttle cached for slot 85
+2017-10-22 22:24:52,724 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,725 : replica 0:  client 0 -head signature success for rid 68
+2017-10-22 22:24:52,725 : replica 0:  replica 0 -> replica 1 for slot 86
+2017-10-22 22:24:52,738 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,738 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 86
+2017-10-22 22:24:52,738 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 86
+2017-10-22 22:24:52,748 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,748 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 86
+2017-10-22 22:24:52,753 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 86
+2017-10-22 22:24:52,753 : replica 2: result from tail  -> client 0 is sent for slot 86
+2017-10-22 22:24:52,753 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,753 : Replica 1 Reshult_shuttle cached for slot 86
+2017-10-22 22:24:52,758 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,759 : Client 0: Result validation success after receiving result from tail for rid 68
+2017-10-22 22:24:52,759 : Client 0: Client 0 result arrived before time - out for rid 68
+2017-10-22 22:24:52,760 : Client 0: Client 0 sent request number 69 opration slice('k2','0:1') to replica 0
+2017-10-22 22:24:52,761 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,762 : Replica 0 Reshult_shuttle cached for slot 86
+2017-10-22 22:24:52,763 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,766 : replica 0:  client 0 -head signature success for rid 69
+2017-10-22 22:24:52,767 : replica 0:  replica 0 -> replica 1 for slot 87
+2017-10-22 22:24:52,774 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,774 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 87
+2017-10-22 22:24:52,779 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 87
+2017-10-22 22:24:52,784 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,784 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 87
+2017-10-22 22:24:52,789 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 87
+2017-10-22 22:24:52,789 : replica 2: result from tail  -> client 0 is sent for slot 87
+2017-10-22 22:24:52,789 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,789 : Replica 1 Reshult_shuttle cached for slot 87
+2017-10-22 22:24:52,794 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,794 : Client 0: Result validation success after receiving result from tail for rid 69
+2017-10-22 22:24:52,794 : Client 0: Client 0 result arrived before time - out for rid 69
+2017-10-22 22:24:52,794 : Client 0: Client 0 sent request number 70 opration get('k2') to replica 0
+2017-10-22 22:24:52,794 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,794 : Replica 0 Reshult_shuttle cached for slot 87
+2017-10-22 22:24:52,794 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,799 : replica 0:  client 0 -head signature success for rid 70
+2017-10-22 22:24:52,799 : replica 0:  replica 0 -> replica 1 for slot 88
+2017-10-22 22:24:52,809 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,809 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 88
+2017-10-22 22:24:52,814 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 88
+2017-10-22 22:24:52,819 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,819 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 88
+2017-10-22 22:24:52,824 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 88
+2017-10-22 22:24:52,824 : replica 2: result from tail  -> client 0 is sent for slot 88
+2017-10-22 22:24:52,824 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,829 : Replica 1 Reshult_shuttle cached for slot 88
+2017-10-22 22:24:52,829 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,829 : Client 0: Result validation success after receiving result from tail for rid 70
+2017-10-22 22:24:52,829 : Client 0: Client 0 result arrived before time - out for rid 70
+2017-10-22 22:24:52,829 : Client 0: Client 0 sent request number 71 opration put('k1','kv1') to replica 0
+2017-10-22 22:24:52,829 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,834 : Replica 0 Reshult_shuttle cached for slot 88
+2017-10-22 22:24:52,834 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,834 : replica 0:  client 0 -head signature success for rid 71
+2017-10-22 22:24:52,834 : replica 0:  replica 0 -> replica 1 for slot 89
+2017-10-22 22:24:52,844 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,849 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 89
+2017-10-22 22:24:52,849 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 89
+2017-10-22 22:24:52,860 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,860 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 89
+2017-10-22 22:24:52,863 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 89
+2017-10-22 22:24:52,864 : replica 2: result from tail  -> client 0 is sent for slot 89
+2017-10-22 22:24:52,865 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,866 : Replica 1 Reshult_shuttle cached for slot 89
+2017-10-22 22:24:52,867 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,867 : Client 0: Result validation success after receiving result from tail for rid 71
+2017-10-22 22:24:52,868 : Client 0: Client 0 result arrived before time - out for rid 71
+2017-10-22 22:24:52,869 : Client 0: Client 0 sent request number 72 opration append('k1',' kv2') to replica 0
+2017-10-22 22:24:52,869 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,869 : Replica 0 Reshult_shuttle cached for slot 89
+2017-10-22 22:24:52,869 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,869 : replica 0:  client 0 -head signature success for rid 72
+2017-10-22 22:24:52,874 : replica 0:  replica 0 -> replica 1 for slot 90
+2017-10-22 22:24:52,884 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,884 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 90
+2017-10-22 22:24:52,889 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 90
+2017-10-22 22:24:52,894 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,894 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 90
+2017-10-22 22:24:52,894 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 90
+2017-10-22 22:24:52,899 : replica 2: result from tail  -> client 0 is sent for slot 90
+2017-10-22 22:24:52,899 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,899 : Replica 1 Reshult_shuttle cached for slot 90
+2017-10-22 22:24:52,899 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,899 : Client 0: Result validation success after receiving result from tail for rid 72
+2017-10-22 22:24:52,899 : Client 0: Client 0 result arrived before time - out for rid 72
+2017-10-22 22:24:52,904 : Client 0: Client 0 sent request number 73 opration slice('k1','0:2') to replica 0
+2017-10-22 22:24:52,904 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,904 : Replica 0 Reshult_shuttle cached for slot 90
+2017-10-22 22:24:52,904 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,909 : replica 0:  client 0 -head signature success for rid 73
+2017-10-22 22:24:52,909 : replica 0:  replica 0 -> replica 1 for slot 91
+2017-10-22 22:24:52,919 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,919 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 91
+2017-10-22 22:24:52,924 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 91
+2017-10-22 22:24:52,929 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,929 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 91
+2017-10-22 22:24:52,934 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 91
+2017-10-22 22:24:52,934 : replica 2: result from tail  -> client 0 is sent for slot 91
+2017-10-22 22:24:52,934 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,934 : Replica 1 Reshult_shuttle cached for slot 91
+2017-10-22 22:24:52,939 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,939 : Client 0: Result validation success after receiving result from tail for rid 73
+2017-10-22 22:24:52,939 : Client 0: Client 0 result arrived before time - out for rid 73
+2017-10-22 22:24:52,939 : Client 0: Client 0 sent request number 74 opration get('k1') to replica 0
+2017-10-22 22:24:52,939 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,939 : Replica 0 Reshult_shuttle cached for slot 91
+2017-10-22 22:24:52,939 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,944 : replica 0:  client 0 -head signature success for rid 74
+2017-10-22 22:24:52,944 : replica 0:  replica 0 -> replica 1 for slot 92
+2017-10-22 22:24:52,958 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,958 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 92
+2017-10-22 22:24:52,963 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 92
+2017-10-22 22:24:52,969 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:52,969 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 92
+2017-10-22 22:24:52,969 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 92
+2017-10-22 22:24:52,969 : replica 2: result from tail  -> client 0 is sent for slot 92
+2017-10-22 22:24:52,974 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:52,974 : Replica 1 Reshult_shuttle cached for slot 92
+2017-10-22 22:24:52,974 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:52,974 : Client 0: Result validation success after receiving result from tail for rid 74
+2017-10-22 22:24:52,974 : Client 0: Client 0 result arrived before time - out for rid 74
+2017-10-22 22:24:52,974 : Client 0: Client 0 sent request number 75 opration put('k2','v1') to replica 0
+2017-10-22 22:24:52,979 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:52,979 : Replica 0 Reshult_shuttle cached for slot 92
+2017-10-22 22:24:52,979 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:52,979 : replica 0:  client 0 -head signature success for rid 75
+2017-10-22 22:24:52,984 : replica 0:  replica 0 -> replica 1 for slot 93
+2017-10-22 22:24:52,994 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:52,994 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 93
+2017-10-22 22:24:52,994 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 93
+2017-10-22 22:24:53,004 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:53,004 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 93
+2017-10-22 22:24:53,004 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 93
+2017-10-22 22:24:53,009 : replica 2: result from tail  -> client 0 is sent for slot 93
+2017-10-22 22:24:53,009 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:53,009 : Replica 1 Reshult_shuttle cached for slot 93
+2017-10-22 22:24:53,009 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:53,009 : Client 0: Result validation success after receiving result from tail for rid 75
+2017-10-22 22:24:53,009 : Client 0: Client 0 result arrived before time - out for rid 75
+2017-10-22 22:24:53,014 : Client 0: Client 0 sent request number 76 opration append('k2',' v2') to replica 0
+2017-10-22 22:24:53,014 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:53,014 : Replica 0 Reshult_shuttle cached for slot 93
+2017-10-22 22:24:53,014 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:53,019 : replica 0:  client 0 -head signature success for rid 76
+2017-10-22 22:24:53,019 : replica 0:  replica 0 -> replica 1 for slot 94
+2017-10-22 22:24:53,029 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:53,029 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 94
+2017-10-22 22:24:53,034 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 94
+2017-10-22 22:24:53,039 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:53,039 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 94
+2017-10-22 22:24:53,044 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 94
+2017-10-22 22:24:53,044 : replica 2: result from tail  -> client 0 is sent for slot 94
+2017-10-22 22:24:53,044 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:53,044 : Replica 1 Reshult_shuttle cached for slot 94
+2017-10-22 22:24:53,049 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:53,049 : Client 0: Result validation success after receiving result from tail for rid 76
+2017-10-22 22:24:53,049 : Client 0: Client 0 result arrived before time - out for rid 76
+2017-10-22 22:24:53,049 : Client 0: Client 0 sent request number 77 opration slice('k2','0:1') to replica 0
+2017-10-22 22:24:53,049 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:53,049 : Replica 0 Reshult_shuttle cached for slot 94
+2017-10-22 22:24:53,049 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:53,057 : replica 0:  client 0 -head signature success for rid 77
+2017-10-22 22:24:53,059 : replica 0:  replica 0 -> replica 1 for slot 95
+2017-10-22 22:24:53,069 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:53,069 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 95
+2017-10-22 22:24:53,074 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 95
+2017-10-22 22:24:53,079 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:53,079 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 95
+2017-10-22 22:24:53,079 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 95
+2017-10-22 22:24:53,084 : replica 2: result from tail  -> client 0 is sent for slot 95
+2017-10-22 22:24:53,084 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:53,084 : Replica 1 Reshult_shuttle cached for slot 95
+2017-10-22 22:24:53,084 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:53,084 : Client 0: Result validation success after receiving result from tail for rid 77
+2017-10-22 22:24:53,084 : Client 0: Client 0 result arrived before time - out for rid 77
+2017-10-22 22:24:53,089 : Client 0: Client 0 sent request number 78 opration get('k2') to replica 0
+2017-10-22 22:24:53,089 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:53,089 : Replica 0 Reshult_shuttle cached for slot 95
+2017-10-22 22:24:53,089 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:53,094 : replica 0:  client 0 -head signature success for rid 78
+2017-10-22 22:24:53,094 : replica 0:  replica 0 -> replica 1 for slot 96
+2017-10-22 22:24:53,104 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:53,104 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 96
+2017-10-22 22:24:53,109 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 96
+2017-10-22 22:24:53,114 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:53,114 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 96
+2017-10-22 22:24:53,119 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 96
+2017-10-22 22:24:53,119 : replica 2: result from tail  -> client 0 is sent for slot 96
+2017-10-22 22:24:53,119 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:53,124 : Replica 1 Reshult_shuttle cached for slot 96
+2017-10-22 22:24:53,124 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:53,124 : Client 0: Result validation success after receiving result from tail for rid 78
+2017-10-22 22:24:53,124 : Client 0: Client 0 result arrived before time - out for rid 78
+2017-10-22 22:24:53,124 : Client 0: Client 0 sent request number 79 opration put('k1','kv1') to replica 0
+2017-10-22 22:24:53,124 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:53,129 : Replica 0 Reshult_shuttle cached for slot 96
+2017-10-22 22:24:53,129 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:53,129 : replica 0:  client 0 -head signature success for rid 79
+2017-10-22 22:24:53,129 : replica 0:  replica 0 -> replica 1 for slot 97
+2017-10-22 22:24:53,139 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:53,139 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 97
+2017-10-22 22:24:53,144 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 97
+2017-10-22 22:24:53,158 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:53,158 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 97
+2017-10-22 22:24:53,162 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 97
+2017-10-22 22:24:53,164 : replica 2: result from tail  -> client 0 is sent for slot 97
+2017-10-22 22:24:53,167 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:53,167 : Replica 1 Reshult_shuttle cached for slot 97
+2017-10-22 22:24:53,169 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:53,169 : Client 0: Result validation success after receiving result from tail for rid 79
+2017-10-22 22:24:53,169 : Client 0: Client 0 result arrived before time - out for rid 79
+2017-10-22 22:24:53,169 : Client 0: Client 0 sent request number 80 opration append('k1',' kv2') to replica 0
+2017-10-22 22:24:53,174 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:53,174 : Replica 0 Reshult_shuttle cached for slot 97
+2017-10-22 22:24:53,174 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:53,179 : replica 0:  client 0 -head signature success for rid 80
+2017-10-22 22:24:53,184 : replica 0:  replica 0 -> replica 1 for slot 98
+2017-10-22 22:24:53,194 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:53,194 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 98
+2017-10-22 22:24:53,199 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 98
+2017-10-22 22:24:53,209 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:53,209 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 98
+2017-10-22 22:24:53,209 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 98
+2017-10-22 22:24:53,214 : replica 2: result from tail  -> client 0 is sent for slot 98
+2017-10-22 22:24:53,214 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:53,214 : Replica 1 Reshult_shuttle cached for slot 98
+2017-10-22 22:24:53,214 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:53,214 : Client 0: Result validation success after receiving result from tail for rid 80
+2017-10-22 22:24:53,214 : Client 0: Client 0 result arrived before time - out for rid 80
+2017-10-22 22:24:53,214 : Client 0: Client 0 sent request number 81 opration slice('k1','0:2') to replica 0
+2017-10-22 22:24:53,219 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:53,219 : Replica 0 Reshult_shuttle cached for slot 98
+2017-10-22 22:24:53,219 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:53,224 : replica 0:  client 0 -head signature success for rid 81
+2017-10-22 22:24:53,229 : replica 0:  replica 0 -> replica 1 for slot 99
+2017-10-22 22:24:53,249 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:53,249 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 99
+2017-10-22 22:24:53,258 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 99
+2017-10-22 22:24:53,265 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:53,265 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 99
+2017-10-22 22:24:53,268 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 99
+2017-10-22 22:24:53,269 : replica 2: result from tail  -> client 0 is sent for slot 99
+2017-10-22 22:24:53,269 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:53,269 : Replica 1 Reshult_shuttle cached for slot 99
+2017-10-22 22:24:53,269 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:53,269 : Client 0: Result validation success after receiving result from tail for rid 81
+2017-10-22 22:24:53,269 : Client 0: Client 0 result arrived before time - out for rid 81
+2017-10-22 22:24:53,274 : Client 0: Client 0 sent request number 82 opration get('k1') to replica 0
+2017-10-22 22:24:53,274 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:53,274 : Replica 0 Reshult_shuttle cached for slot 99
+2017-10-22 22:24:53,274 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:53,279 : replica 0:  client 0 -head signature success for rid 82
+2017-10-22 22:24:53,279 : replica 0:  replica 0 -> replica 1 for slot 100
+2017-10-22 22:24:53,289 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:53,289 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 100
+2017-10-22 22:24:53,294 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 100
+2017-10-22 22:24:53,304 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:53,304 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 100
+2017-10-22 22:24:53,309 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 100
+2017-10-22 22:24:53,309 : replica 2: result from tail  -> client 0 is sent for slot 100
+2017-10-22 22:24:53,314 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:53,314 : Replica 1 Reshult_shuttle cached for slot 100
+2017-10-22 22:24:53,314 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:53,314 : Client 0: Result validation success after receiving result from tail for rid 82
+2017-10-22 22:24:53,314 : Client 0: Client 0 result arrived before time - out for rid 82
+2017-10-22 22:24:53,319 : Client 0: Client 0 sent request number 83 opration put('k2','v1') to replica 0
+2017-10-22 22:24:53,319 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:53,324 : Replica 0 Reshult_shuttle cached for slot 100
+2017-10-22 22:24:53,324 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:53,329 : replica 0:  client 0 -head signature success for rid 83
+2017-10-22 22:24:53,329 : replica 0:  replica 0 -> replica 1 for slot 101
+2017-10-22 22:24:53,339 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:53,339 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 101
+2017-10-22 22:24:53,344 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 101
+2017-10-22 22:24:53,357 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:53,357 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 101
+2017-10-22 22:24:53,360 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 101
+2017-10-22 22:24:53,362 : replica 2: result from tail  -> client 0 is sent for slot 101
+2017-10-22 22:24:53,363 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:53,364 : Replica 1 Reshult_shuttle cached for slot 101
+2017-10-22 22:24:53,366 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:53,367 : Client 0: Result validation success after receiving result from tail for rid 83
+2017-10-22 22:24:53,367 : Client 0: Client 0 result arrived before time - out for rid 83
+2017-10-22 22:24:53,368 : Client 0: Client 0 sent request number 84 opration append('k2',' v2') to replica 0
+2017-10-22 22:24:53,369 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:53,369 : Replica 0 Reshult_shuttle cached for slot 101
+2017-10-22 22:24:53,369 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:53,374 : replica 0:  client 0 -head signature success for rid 84
+2017-10-22 22:24:53,374 : replica 0:  replica 0 -> replica 1 for slot 102
+2017-10-22 22:24:53,384 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:53,384 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 102
+2017-10-22 22:24:53,389 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 102
+2017-10-22 22:24:53,404 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:53,404 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 102
+2017-10-22 22:24:53,404 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 102
+2017-10-22 22:24:53,409 : replica 2: result from tail  -> client 0 is sent for slot 102
+2017-10-22 22:24:53,409 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:53,409 : Replica 1 Reshult_shuttle cached for slot 102
+2017-10-22 22:24:53,409 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:53,409 : Client 0: Result validation success after receiving result from tail for rid 84
+2017-10-22 22:24:53,409 : Client 0: Client 0 result arrived before time - out for rid 84
+2017-10-22 22:24:53,414 : Client 0: Client 0 sent request number 85 opration slice('k2','0:1') to replica 0
+2017-10-22 22:24:53,414 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:53,414 : Replica 0 Reshult_shuttle cached for slot 102
+2017-10-22 22:24:53,414 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:53,419 : replica 0:  client 0 -head signature success for rid 85
+2017-10-22 22:24:53,419 : replica 0:  replica 0 -> replica 1 for slot 103
+2017-10-22 22:24:53,429 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:53,429 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 103
+2017-10-22 22:24:53,434 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 103
+2017-10-22 22:24:53,444 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:53,444 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 103
+2017-10-22 22:24:53,449 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 103
+2017-10-22 22:24:53,449 : replica 2: result from tail  -> client 0 is sent for slot 103
+2017-10-22 22:24:53,449 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:53,449 : Replica 1 Reshult_shuttle cached for slot 103
+2017-10-22 22:24:53,449 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:53,454 : Client 0: Result validation success after receiving result from tail for rid 85
+2017-10-22 22:24:53,455 : Client 0: Client 0 result arrived before time - out for rid 85
+2017-10-22 22:24:53,457 : Client 0: Client 0 sent request number 86 opration get('k2') to replica 0
+2017-10-22 22:24:53,458 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:53,459 : Replica 0 Reshult_shuttle cached for slot 103
+2017-10-22 22:24:53,460 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:53,463 : replica 0:  client 0 -head signature success for rid 86
+2017-10-22 22:24:53,465 : replica 0:  replica 0 -> replica 1 for slot 104
+2017-10-22 22:24:53,474 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:53,474 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 104
+2017-10-22 22:24:53,479 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 104
+2017-10-22 22:24:53,484 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:53,484 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 104
+2017-10-22 22:24:53,489 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 104
+2017-10-22 22:24:53,489 : replica 2: result from tail  -> client 0 is sent for slot 104
+2017-10-22 22:24:53,494 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:53,494 : Replica 1 Reshult_shuttle cached for slot 104
+2017-10-22 22:24:53,494 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:53,494 : Client 0: Result validation success after receiving result from tail for rid 86
+2017-10-22 22:24:53,494 : Client 0: Client 0 result arrived before time - out for rid 86
+2017-10-22 22:24:53,494 : Client 0: Client 0 sent request number 87 opration put('k1','kv1') to replica 0
+2017-10-22 22:24:53,494 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:53,499 : Replica 0 Reshult_shuttle cached for slot 104
+2017-10-22 22:24:53,499 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:53,499 : replica 0:  client 0 -head signature success for rid 87
+2017-10-22 22:24:53,504 : replica 0:  replica 0 -> replica 1 for slot 105
+2017-10-22 22:24:53,514 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:53,514 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 105
+2017-10-22 22:24:53,519 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 105
+2017-10-22 22:24:53,524 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:53,524 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 105
+2017-10-22 22:24:53,529 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 105
+2017-10-22 22:24:53,529 : replica 2: result from tail  -> client 0 is sent for slot 105
+2017-10-22 22:24:53,529 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:53,529 : Replica 1 Reshult_shuttle cached for slot 105
+2017-10-22 22:24:53,534 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:53,534 : Client 0: Result validation success after receiving result from tail for rid 87
+2017-10-22 22:24:53,534 : Client 0: Client 0 result arrived before time - out for rid 87
+2017-10-22 22:24:53,534 : Client 0: Client 0 sent request number 88 opration append('k1',' kv2') to replica 0
+2017-10-22 22:24:53,534 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:53,534 : Replica 0 Reshult_shuttle cached for slot 105
+2017-10-22 22:24:53,534 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:53,539 : replica 0:  client 0 -head signature success for rid 88
+2017-10-22 22:24:53,539 : replica 0:  replica 0 -> replica 1 for slot 106
+2017-10-22 22:24:53,549 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:53,549 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 106
+2017-10-22 22:24:53,559 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 106
+2017-10-22 22:24:53,567 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:53,567 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 106
+2017-10-22 22:24:53,570 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 106
+2017-10-22 22:24:53,570 : replica 2: result from tail  -> client 0 is sent for slot 106
+2017-10-22 22:24:53,570 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:53,570 : Replica 1 Reshult_shuttle cached for slot 106
+2017-10-22 22:24:53,570 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:53,570 : Client 0: Result validation success after receiving result from tail for rid 88
+2017-10-22 22:24:53,575 : Client 0: Client 0 result arrived before time - out for rid 88
+2017-10-22 22:24:53,575 : Client 0: Client 0 sent request number 89 opration slice('k1','0:2') to replica 0
+2017-10-22 22:24:53,575 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:53,575 : Replica 0 Reshult_shuttle cached for slot 106
+2017-10-22 22:24:53,575 : Replica 0 Reshult_shuttle reached head
+2017-10-22 22:24:53,580 : replica 0:  client 0 -head signature success for rid 89
+2017-10-22 22:24:53,580 : replica 0:  replica 0 -> replica 1 for slot 107
+2017-10-22 22:24:53,590 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 22:24:53,590 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 107
+2017-10-22 22:24:53,595 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 107
+2017-10-22 22:24:53,605 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 22:24:53,605 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 107
+2017-10-22 22:24:53,605 : replica 2: result shuttle  from tail  -> replica 1 is sent for slot 107
+2017-10-22 22:24:53,610 : replica 2: result from tail  -> client 0 is sent for slot 107
+2017-10-22 22:24:53,610 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 22:24:53,610 : Replica 1 Reshult_shuttle cached for slot 107
+2017-10-22 22:24:53,610 : Client 0:  tail to client signature success for rid +str(rid)
+2017-10-22 22:24:53,610 : Client 0: Result validation success after receiving result from tail for rid 89
+2017-10-22 22:24:53,610 : Client 0: Client 0 result arrived before time - out for rid 89
+2017-10-22 22:24:53,615 : Client 0:  Client 0 sent fianl results to parent for checking
+2017-10-22 22:24:53,615 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 22:24:53,615 : Parent Client : Final Results check passed for Client : 0
+2017-10-22 22:24:53,615 : Replica 0 Reshult_shuttle cached for slot 107
+2017-10-22 22:24:53,615 : Replica 0 Reshult_shuttle reached head

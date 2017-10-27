@@ -1,0 +1,547 @@
+import sys
+import nacl.encoding
+import nacl.hash
+import nacl.signing
+from nacl.bindings.utils import sodium_memcmp
+from re import split
+import time
+import logging
+class replica(process):
+	def setup(a:bool, d :dict, r : list,c : list, public_key_dict : dict,pk : PrivateKey,replica_timeout :int ,head_timeout : int,failure : dict):
+		self.s=0
+		self.terminate = a
+		self.d = d
+		self.res=""
+		self.result = dict()
+		self.pk=pk
+		self.public_key_dict = public_key_dict
+		self.hr = dict()
+		self.slot=-1
+		self.history = dict()
+		self.hashresult = []
+		self.rid_slot = dict()
+		self.idr= None
+		self.fail = []
+		self.ncr= dict()
+		self.nfr= dict()
+		self.ns = dict()
+		self.nrs = dict()
+		self.cr = 0
+		self.co = 0
+		self.drs = 0
+		self.drop=0
+		
+		
+	def receive(msg =("re-trans-client",encrypt_oper,encrypt_rid),from_=client):
+		#output("received")
+		#if rid_slot[rid] in hr.keys():
+		#output(str(idr))
+		#output("dict is "+ repr(rid_slot))
+		#output("rid is "+repr(rid))
+		
+		client_rep_dkey=nacl.signing.VerifyKey(public_key_dict[client], encoder=nacl.encoding.HexEncoder)					
+		try:
+			client_rep_dkey.verify(encrypt_oper)
+			client_rep_dkey.verify(encrypt_rid)
+			operation = encrypt_oper.message.decode()
+			rid = int(encrypt_rid.message.decode())
+		except nacl.exceptions.BadSignatureError :
+			logging.error("Replica "+ str(r.index(idr))+" : Client " + str(c.index(client)) +" -> Replica "+ str(r.index(idr))+ " re-transmission signature failed for rid "+str(rid))
+		logging.info("Replica "+ str(r.index(idr))+" : Client " + str(c.index(client)) +" -> Replica "+ str(r.index(idr))+ " re-transmission signature success for rid "+str(rid))
+		logging.info("Replica "+ str(r.index(idr))+" : Client " + str(c.index(client)) +" -> Replica "+ str(r.index(idr))+ " re-transmission msg received for rid "+str(rid))	
+		try:
+			ncr[c.index(client)] = ncr[c.index(client)] +1
+		except KeyError:
+			ncr[c.index(client)] = 0
+		if r.index(idr) == 5:
+				logging.info("ncr is " + str(ncr) + " fail is "+str(fail) )	
+		for x in fail:
+			if x[0].strip() == "client_request":
+				if int(x[1]) in ncr.keys():
+					if ncr[int(x[1])] == int(x[2]) and int(x[1]) == c.index(client):
+						#output("ncr triggered at head for client "+ str(c.index(client)) + "rid " + str(rid) )
+						logging.info("replica "+str(r.index(idr))+" Client_request failure triggered at replica "+str(r.index(idr))+"  for client "+ x[1] + " message " + x[2])
+						if x[3].strip() == "change_operation":
+							co = 1
+							
+						if x[3].strip() == "change_result":
+							cr =1 
+						if x[3].strip() == "drop_result_stmt":
+							drs=1	
+						if x[3].strip() == "drop":
+							drop=1
+		if (rid,client) in rid_slot.keys() and rid_slot[(rid,client)] in history.keys():
+			#output("rid is "+str(r.index(idr)))
+			#logging.info("Replica "+ str(r.index(idr))+" rid_slot " + str(rid_slot))
+			if rid_slot[(rid,client)] in hr.keys():
+				#output("slot is "+str(rid_slot[(rid,client)])+" result is "+ str(result[rid_slot[(rid,client)]])+ "replica is" + str(r.index(idr)) )
+				#output(hr[rid_slot[rid]])
+				#encrypt_hashresult = pk.sign(repr(hr[rid_slot[(rid,client)]]).encode())
+				#encrypt_slot = pk.sign(str(slot).encode())
+				send(("re-trans-replica",hr[rid_slot[(rid,client)]],result[rid_slot[(rid,client)]],rid),to=client)
+				logging.info("Replica "+ str(r.index(idr))+" : Replica " + str(r.index(idr)) +" -> Client "+ str(c.index(client))+ " cached result sent to client for rid "+str(rid))
+				#output("sent to client"+str(result[rid_slot[(rid,client)]]))
+		
+		else:
+			logging.info("Replica "+ str(r.index(idr))+" : else condition enter")
+			if r.index((idr))!=0:
+				encrypt_oper = pk.sign(operation.encode())
+				encrypt_rid = pk.sign(str(rid).encode())
+				logging.info("Replica "+ str(r.index(idr))+" : before sending to head")
+				send(("forward-req",encrypt_oper,encrypt_rid,client),to = r[0])
+				logging.info("Replica "+ str(r.index(idr))+" : Replica " + str(r.index(idr)) +" ->Replica 0 forward request sent for client "+ str(c.index(client))+ " rid "+str(rid))
+				if(await((rid,client) in rid_slot.keys() and rid_slot[(rid,client)] in hr.keys())):
+					send(("re-trans-replica",hr[rid_slot[(rid,client)]],result[rid_slot[(rid,client)]]),to=client)
+					logging.info("Replica "+ str(r.index(idr))+" : Replica " + str(r.index(idr)) +" -> Client "+ str(c.index(client))+ " cached result arrived before timeout and sent to client for rid "+str(rid))
+				elif timeout(replica_timeout):
+					#output("reconfig req to olympus")
+					logging.info("Replica "+ str(r.index(idr))+" : Replica " + str(r.index(idr)) +" -> Olympus proof of misbehaviour : cached result time out for client "+ str(c.index(client))+ " rid "+str(rid))
+			 
+	def receive(msg = ("forward-req",encrypt_oper,encrypt_rid,client) , from_=replica):
+		
+		
+		rep_head_dkey=nacl.signing.VerifyKey(public_key_dict[replica], encoder=nacl.encoding.HexEncoder)
+		try:
+			rep_head_dkey.verify(encrypt_oper)
+			rep_head_dkey.verify(encrypt_rid)
+			operation = encrypt_oper.message.decode()
+			rid = int(encrypt_rid.message.decode())
+		except nacl.exceptions.BadSignatureError :
+			logging.error("Replica 0 : Replica " + str(r.index(replica)) +" -> Replica 0 forward-req signature failed for rid "+str(rid))
+		logging.info("Replica 0 : Replica " + str(r.index(replica)) +" -> Replica 0 forward-req signature success for rid "+str(rid))	
+		logging.info("Replica 0 received forwarded request from "+str(r.index(replica))+" by client "+str(c.index(client))+" rid "+str(rid))	
+		try:
+			nfr[c.index(client)] = nfr[c.index(client)] +1
+		except KeyError:
+			nfr[c.index(client)] = 0
+		#logging.info("fail = " + str(fail) + " nfr = "+str(nfr)+"  Client "+ str(c.index(client)) +"  rid "+str(rid))	
+		for x in fail:
+			
+			if x[0].strip() == "forwarded_request":
+				if int(x[1]) in nfr.keys():
+					if nfr[int(x[1])] == int(x[2]) and int(x[1]) == c.index(client):
+						#output("ncr triggered at head for client "+ str(c.index(client)) + "rid " + str(rid) )
+						logging.info("Replica 0: Forward_request failure triggered at replica "+str(r.index(idr))+"  for client "+ x[1] + " message " + x[2])
+						if x[3].strip() == "change_operation":
+							co = 1
+							
+						if x[3].strip() == "change_result":
+							cr =1 
+						if x[3].strip() == "drop_result_stmt":
+							drs=1
+						if x[3].strip() == "drop":
+							drop=1
+		if (rid,client) in rid_slot.keys() and  rid_slot[(rid,client)] in hr.keys():
+			#output("rid is "+str(r.index(idr)))
+			
+				send(("re-trans-replica",hr[rid_slot[(rid,client)]],result[rid_slot[(rid,client)]],rid),to=client)
+				logging.info("Replica 0: Replica 0 has the result shuttle cached and sent to Client "+ str(c.index(client)) +"  rid "+str(rid))
+		else :
+			if (rid,client) in rid_slot.keys() and rid_slot[(rid,client)] in history.keys():
+				logging.info("Replica 0: Replica 0 has started timer")
+				if(await((rid,client) in rid_slot.keys() and rid_slot[(rid,client)] in hr.keys())):
+					send(("re-trans-replica",hr[rid_slot[(rid,client)]],result[rid_slot[(rid,client)]]),to=client)
+					logging.info("Replica 0: Replica 0 has the result shuttle cached before timer expired and sent to Client "+ str(c.index(client)) +"  rid "+str(rid))
+				elif timeout(head_timeout):
+					#output("reconfig req to olympus")
+					logging.info("Replica 0: Replica 0 timer expired, reconfig request to olympus")
+			else :
+				logging.info("Replica 0: Replica 0 doesn't have the slot for Client "+ str(c.index(client)) +"  rid "+str(rid))
+				encrypt_oper=pk.sign(operation.encode())
+				encrypt_rid = pk.sign(str(rid).encode())
+				send(("head-retrans-head",encrypt_oper,encrypt_rid,client), to = r[0])
+				logging.info("Replica 0: Replica 0 has sent request for Client "+ str(c.index(client)) +"  rid "+str(rid)+" to Replica0 ")
+				logging.info("Replica 0: Replica 0 has started the timer")
+				if(await((rid,client) in rid_slot.keys() and rid_slot[(rid,client)] in hr.keys())):	
+					logging.info("Replica 0: Replica 0 has the result shuttle cached and sent to Client "+ str(c.index(client)) +"  rid "+str(rid))
+					send(("re-trans-replica",hr[rid_slot[(rid,client)]],result[rid_slot[(rid,client)]]),to=client)
+				elif timeout(head_timeout):
+					#output("reconfig req to olympus")
+					logging.info("Replica 0: Replica 0 timer expired, reconfig request to olympus")
+	def receive(msg= ("head-retrans-head",encrypt_oper,encrypt_rid,client), from_ = head):
+		rep_head_dkey=nacl.signing.VerifyKey(public_key_dict[replica], encoder=nacl.encoding.HexEncoder)
+		try:
+			rep_head_dkey.verify(encrypt_oper)
+			rep_head_dkey.verify(encrypt_rid)
+			operation = encrypt_oper.message.decode()
+			rid = int(encrypt_rid.message.decode())
+		except nacl.exceptions.BadSignatureError :
+			logging.error("Replica 0 : Replica 0 -> Replica 0 forward-req decryption failed for rid "+str(rid))
+		slot=slot+1
+		if  slot in history.keys():
+			logging.error("replica 0:  client "+ str(c.index(client)) +" -> replica 0 slot error for rid "+ str(rid) + "slot " + str(slot))
+		rid_slot[(rid,client)]=slot	
+		orderproof.append([slot,operation])
+		history[slot] = operation
+		#operation = head_client_box.decrypt(encrypt_operation).decode()
+		#output(operation)
+		x= split(r"[,()']+",operation)
+		#output(x)
+		if x[0] == "put":
+			d[x[1]] = x[2]
+			res = "ok"
+		if x[0] == "get" : 
+			try:
+				res=  d[x[1]]
+			except KeyError:
+				res=""
+		if x[0] == "append" :
+			try:
+				d[x[1]] = d[x[1]]+x[2]
+				res="update ok"
+			except KeyError:
+				res="update failed"
+		if x[0] == "slice" :
+			x[2] = x[2].split(":")
+			try:
+				d[x[1]] = d[x[1]][int(x[2][0]):int(x[2][1])]
+				res= "slice ok"
+				#output(d[x[1]])
+			except KeyError:
+				res = "slice fail"
+				#output(res)
+		result[slot] = res		
+		i=r.index(idr)
+		#output("head" + operation)
+		en_res = res.encode()
+		res_digest =  nacl.hash.sha256(en_res,encoder=nacl.encoding.HexEncoder)
+		res_hash = nacl.encoding.HexEncoder.encode(en_res)	
+		hashresult=[[res_digest,res_hash,slot]]
+		#output("head")
+		#output(hashresult)
+		#head_r1_box = Box(pk, public_key_dict[r[i+1]])
+		encrypt_operation = pk.sign(operation.encode())
+		encrypt_slot = pk.sign(str(slot).encode())
+		#encrypt_operation = head_r1_box.encrypt(operation.encode())
+		encrypt_hashresult = pk.sign(repr(hashresult).encode())
+		encrypt_order_proof = pk.sign(repr(orderproof).encode())
+		#encrypt_rid_slot = pk.sign(repr(rid_slot).encode())
+		
+		#encrypt_client = pk.sign(str(client).encode())
+		logging.info("replica 0:  replica 0 -> replica "+str(i+1) + " for slot "+ str(slot))
+		send(("rep_trans",encrypt_slot,encrypt_operation,encrypt_order_proof,encrypt_hashresult,client,rid_slot,rid), to =r[i+1])	
+	def receive(msg =("initial_transmission",encrypt_operation,encrypt_rid) ,from_=client):
+		#time.sleep(6)
+		
+		head_client_dkey=nacl.signing.VerifyKey(public_key_dict[client], encoder=nacl.encoding.HexEncoder)
+		try:
+			head_client_dkey.verify(encrypt_operation)
+			head_client_dkey.verify(encrypt_rid)
+			operation = encrypt_operation.message.decode()
+			rid = int(encrypt_rid.message.decode())
+		except nacl.exceptions.BadSignatureError :
+			#output("client-head decrypt fail")
+			logging.error("replica 0:  client "+ str(c.index(client)) +" -head signature fail for rid "+ str(rid))
+		logging.info("replica 0:  client "+ str(c.index(client)) +" -head signature success for rid "+ str(rid))	
+		idr=r[0]
+		s=s+1
+		slot=slot+1
+		if str(r.index(idr)) in failure.keys() and len(fail)==0:
+			for x in failure[str(r.index(idr))]:
+				fail.append(split(r'[(,)]+',x))
+		try:
+			ncr[c.index(client)] = ncr[c.index(client)] +1
+		except KeyError:
+			ncr[c.index(client)] = 0
+		#output(ncr)
+		#output(fail)
+		
+		#head_client_box = Box(pk, public_key_dict[client])
+		
+		orderproof=[]
+		#hashresult = dict()
+		
+				
+		#output(str(r.index(idr))+str(fail))	
+			
+		if  slot in history.keys():
+			logging.error("replica 0:  client "+ str(c.index(client)) +" -> replica 0 slot error for rid "+ str(rid) + "slot " + str(slot))
+		rid_slot[(rid,client)]=slot	
+		orderproof.append([slot,operation])
+		history[slot] = operation
+		#operation = head_client_box.decrypt(encrypt_operation).decode()
+		#output(operation)
+		x= split(r"[,()']+",operation)
+		#output(x)
+		if x[0] == "put":
+			d[x[1]] = x[2]
+			res = "ok"
+		if x[0] == "get" : 
+			try:
+				res=  d[x[1]]
+			except KeyError:
+				res=""
+		if x[0] == "append" :
+			try:
+				d[x[1]] = d[x[1]]+x[2]
+				res="update ok"
+			except KeyError:
+				res="update failed"
+		if x[0] == "slice" :
+			x[2] = x[2].split(":")
+			try:
+				d[x[1]] = d[x[1]][int(x[2][0]):int(x[2][1])]
+				res= "slice ok"
+				#output(d[x[1]])
+			except KeyError:
+				res = "slice fail"
+				#output(res)
+		for x in fail:
+			if x[0].strip() == "client_request":
+				if int(x[1]) in ncr.keys():
+					if ncr[int(x[1])] == int(x[2]) and int(x[1]) == c.index(client):
+						#output("ncr triggered at head for client "+ str(c.index(client)) + "rid " + str(rid) )
+						logging.info("Replica "+str(r.index(idr))+" Client_request failure triggered at replica "+str(r.index(idr))+"  for client "+ x[1] + " message " + x[2])
+						if x[3].strip() == "change_operation":
+							co = 1
+							
+						if x[3].strip() == "change_result":
+							cr =1 
+						if x[3].strip() == "drop_result_stmt":
+							drs=1
+						if x[3].strip() == "drop":
+							drop=1
+		if co==1:
+			operation = "get('x')"
+			logging.info("Replica "+str(r.index(idr))+" Operation changed to get('x') at replica "+str(r.index(idr)))
+			co=0
+		if 	cr ==1 :
+			res = "OK"
+			logging.info("Replica "+str(r.index(idr))+" Result changed to 'OK' at replica "+str(r.index(idr)))
+			cr=0
+		result[slot] = res		
+		i=r.index(idr)
+		#output("head" + operation)
+		en_res = res.encode()
+		res_digest =  nacl.hash.sha256(en_res,encoder=nacl.encoding.HexEncoder)
+		res_hash = nacl.encoding.HexEncoder.encode(en_res)	
+		hashresult=[[res_digest,res_hash,slot]]
+		if drs == 1:
+			del hashresult[0]
+			logging.info("Replica "+str(r.index(idr))+" :Hashresult of head is omitted at replica "+str(r.index(idr)))
+			drs=0
+		#output("head")
+		#output(hashresult)
+		#head_r1_box = Box(pk, public_key_dict[r[i+1]])
+		encrypt_operation = pk.sign(operation.encode())
+		encrypt_slot = pk.sign(str(slot).encode())
+		#encrypt_operation = head_r1_box.encrypt(operation.encode())
+		encrypt_hashresult = pk.sign(repr(hashresult).encode())
+		encrypt_order_proof = pk.sign(repr(orderproof).encode())
+		#encrypt_rid_slot = pk.sign(repr(rid_slot).encode())
+		
+		#encrypt_client = pk.sign(str(client).encode())
+		if drop==0:
+			logging.info("replica 0:  replica 0 -> replica "+str(i+1) + " for slot "+ str(slot))
+			send(("rep_trans",encrypt_slot,encrypt_operation,encrypt_order_proof,encrypt_hashresult,client,rid_slot,rid), to =r[i+1])
+		else:
+			drop = 0
+			logging.info("shuttle dropped by head for client "+str(c.index(client))+" rid "+str(rid))
+		#output("sent from head ")
+		
+	def receive(msg= ("result-shuttle",encrypt_hashresult,client),from_= frep):
+		try:
+			nrs[c.index(client)] = nrs[c.index(client)] +1
+		except KeyError:
+			nrs[c.index(client)] = 0
+		for x in fail:
+			if x[0].strip() == "result_shuttle":
+				if int(x[1]) in nrs.keys():
+					if nrs[int(x[1])] == int(x[2]) and int(x[1]) == c.index(client):
+						#output("ncr triggered at head for client "+ str(c.index(client)) + "rid " + str(rid) )
+						logging.info("Replica "+str(r.index(idr))+" Result_shuttle failure triggered at replica "+str(r.index(idr))+"  for client "+ x[1] + " message " + x[2])
+						if x[3].strip() == "change_operation":
+							co = 1
+							
+						if x[3].strip() == "change_result":
+							cr =1 
+						if x[3].strip() == "drop_result_stmt":
+							drs=1
+						if x[3].strip() == "drop":
+							drop=1
+		s=s+1
+		#fr_r_box = Box(pk, public_key_dict[frep])
+		fr_r_dkey=nacl.signing.VerifyKey(public_key_dict[frep], encoder=nacl.encoding.HexEncoder)
+		try:
+			fr_r_dkey.verify(encrypt_hashresult)
+			#fr_r_dkey.verify(encrypt_client)
+			temp_hr = eval(encrypt_hashresult.message.decode())
+			#client = encrypt_client.decode()
+		except nacl.exceptions.BadSignatureError :
+			#output("fr-r decrypt fail")
+			logging.info("replica "+str(r.index(idr))+" : Replica "+str(r.index(frep))+" -> Replica "+str(r.index(idr))+" signature fail")
+		logging.info("replica "+str(r.index(idr))+" : Replica "+str(r.index(frep))+" -> Replica "+str(r.index(idr))+" signature success") 
+		#hr= eval(fr_r_box.decrypt(encrypt_hashresult).decode())
+		for h in temp_hr:
+			bres=nacl.encoding.HexEncoder.decode(h[1])
+			#output(bres)
+			orig_dgs = nacl.hash.sha256(bres, encoder=nacl.encoding.HexEncoder)
+			if sodium_memcmp(h[0],orig_dgs):
+				if bres.decode()!= result[h[2]]:
+					#output("proof of misbehaviour : result - shuttle"+ ":"+bres.decode()+ ":"+ res)
+					logging.info("Replica "+str(r.index(idr))+" Proof of misbehaviour : Reshult_shuttle check failed")
+					
+		hr[h[2]] = temp_hr
+		#output("cached ")#+ repr(hr) + "rid_slot is " + repr(rid_slot))
+		logging.info("Replica "+str(r.index(idr))+" Reshult_shuttle cached for slot "+ str(h[2]))
+		j=r.index(frep)
+		if j-2 >= 0  :
+			#r_pr_box = Box(pk, public_key_dict[r[j-2]])
+			
+			encrypt_hashresult = pk.sign(repr(temp_hr).encode())
+			send(("result-shuttle",encrypt_hashresult,client), to =r[j-2])
+			#output("sent")
+		if j-2 < 0:
+			logging.info("Replica "+str(r.index(idr))+" Reshult_shuttle reached head")
+			#output("result-shuttle reached head")
+	def receive(msg =("rep_trans",encrypt_slot,encrypt_operation,encrypt_order_proof,encrypt_hashresult,client,rid_slot,rid) ,from_=prev_rep):
+		
+		s=s+1
+		i=r.index(prev_rep)
+		idr=r[i+1]
+		if str(r.index(idr)) in failure.keys() and len(fail)==0:
+			for x in failure[str(r.index(idr))]:
+				fail.append(split(r'[(,)]+',x))
+		try:
+			ns[c.index(client)] = ns[c.index(client)] +1
+		except KeyError:
+			ns[c.index(client)] = 0
+			
+		for x in fail:
+			if x[0].strip() == "shuttle":
+				if int(x[1]) in ns.keys():
+					if ns[int(x[1])] == int(x[2]) and int(x[1]) == c.index(client):
+						#output("ncr triggered at head for client "+ str(c.index(client)) + "rid " + str(rid) )
+						logging.info("Replica "+str(r.index(idr))+" Shuttle failure triggered at replica "+str(r.index(idr))+"  for client "+ x[1] + " message " + x[2])
+						if x[3].strip() == "change_operation":
+							co = 1
+							
+						if x[3].strip() == "change_result":
+							cr =1 
+						if x[3].strip() == "drop_result_stmt":
+							drs=1		
+						if x[3].strip() == "drop":
+							drop=1	
+		#output(str(r.index(idr))+str(fail))
+		#result = result+","
+		#output("received _ from head")
+		#pr_r_box = Box(pk, public_key_dict[prev_rep])
+		pr_r_dkey=nacl.signing.VerifyKey(public_key_dict[prev_rep], encoder=nacl.encoding.HexEncoder)
+		try:
+			pr_r_dkey.verify(encrypt_operation)
+			pr_r_dkey.verify(encrypt_hashresult)
+			pr_r_dkey.verify(encrypt_order_proof)
+			pr_r_dkey.verify(encrypt_slot)
+			#pr_r_dkey.verify(encrypt_rid_slot)
+		except nacl.exceptions.BadSignatureError :
+			#output("pr-r decrypt fail")
+			logging.error("replica "+ str(i+1) +": replica "+ str(i) +" -> replica "+ str(i+1) +"signature fail ")
+		logging.info("replica "+ str(i+1) +": replica "+ str(i) +" -> replica "+ str(i+1) +"signature success ")	
+		slot = int(encrypt_slot.message.decode())
+		operation = encrypt_operation.message.decode()
+		logging.info("replica "+ str(i+1)+ ": shuttle from replica "+ str(i) +" -> replica "+ str(i+1) +" is received for slot "+ str(slot))
+		hashresult = eval(encrypt_hashresult.message.decode())
+		orderproof = eval(encrypt_order_proof.message.decode())
+		#rid_slot = eval(encrypt_rid_slot.message.decode())
+		#operation = pr_r_box.decrypt(encrypt_operation).decode()
+		#hashresult = eval(pr_r_box.decrypt(encrypt_hashresult).decode())
+		#if slot in history.keys():
+		#	output("slot error")
+		#output(hashresult)
+		if slot in history.keys() :
+			logging.error("replica "+ str(i+1) +":  client "+ str(c.index(client)) +" -> replica "+str(i+1)+" slot error " + str(slot))
+		orderproof.append([slot,operation])
+		history[slot]=operation
+		#output("history updated")
+		self.rid_slot = rid_slot
+		x= split(r"[,()']+",operation)
+		#output("replica")
+		#output(hashresult)
+		if x[0] == "put":
+			d[x[1]] = x[2]
+			res = "ok"
+		if x[0] == "get" : 
+			try:
+				res=  d[x[1]]
+			except KeyError:
+				res=  ""
+		if x[0] == "append" :
+			try:
+				d[x[1]]=d[x[1]] + x[2]
+				res= "update ok"
+			except KeyError:
+				res=  "update failed"
+		if x[0] == "slice" :
+			x[2] = x[2].split(":")
+			try:
+				#output("before slice replica")
+				d[x[1]] = d[x[1]][int(x[2][0]):int(x[2][1])]
+				#output("sliced")
+				res= "slice ok"
+			except KeyError:
+				#output("error in slice")
+				res = "slice fail"
+		if co==1:
+			operation = "get('x')"
+			logging.info("Replica "+str(r.index(idr))+" Operation changed to get('x') at replica "+str(r.index(idr)))
+			co=0
+		if 	cr ==1 :
+			res = "OK"
+			logging.info("Replica "+str(r.index(idr))+" Result changed to 'OK' at replica "+str(r.index(idr)))
+			cr=0		
+		result[slot] = res
+		en_res = res.encode()
+		res_digest =  nacl.hash.sha256(en_res,encoder=nacl.encoding.HexEncoder)
+		res_hash = nacl.encoding.HexEncoder.encode(en_res)
+		if drs == 1:
+			del hashresult[0]
+			logging.info("Replica "+str(r.index(idr))+" :Result shuttle of head is omitted  at replica "+str(r.index(idr)))
+			drs=0
+		hashresult.append([res_digest,res_hash,slot])		
+		#result = result + res		
+		
+		if i+2 < len(r):
+			#r_nr_box = Box(pk, public_key_dict[r[i+2]])
+			encrypt_operation = pk.sign(operation.encode())
+			encrypt_slot = pk.sign(str(slot).encode())
+			encrypt_hashresult = pk.sign(repr(hashresult).encode())
+			encrypt_order_proof = pk.sign(repr(orderproof).encode())
+			#encrypt_rid_slot = pk.sign(repr(rid_slot).encode())
+			#output(" before r[i+2]")
+			if drop == 0 :
+				send(("rep_trans",encrypt_slot,encrypt_operation,encrypt_order_proof,encrypt_hashresult,client,rid_slot,rid), to =r[i+2])
+				logging.info("replica "+ str(i+1) +": shuttle from replica "+ str(i+1) +" -> replica "+ str(i+2) +" is sent for slot "+ str(slot))
+			else:
+				drop = 0
+			#output("sent to rep-1 to rep+1")
+		else:
+			#t_c_box = Box(pk, public_key_dict[c[0]])
+			#for so in orderproof :
+			#	if orderproof[0][0]!=so[0] or orderproof[0][1]!=so[1]:
+			#		output("tail - error in orderproof")
+			#output("tail")
+			#output(orderproof)
+			hr[hashresult[0][2]] = hashresult
+			encrypt_res = pk.sign(en_res)
+			encrypt_hashresult = pk.sign(repr(hashresult).encode())
+			encrypt_hashresult_shuttle = pk.sign(repr(hashresult).encode())
+			send(("result-shuttle" , encrypt_hashresult_shuttle,client), to=prev_rep)
+			logging.info("replica "+ str(i+1) +": result shuttle  from tail  -> replica "+ str(r.index(idr)-1) +" is sent for slot "+ str(slot))
+			#time.sleep(3.25)
+			if drop ==0 :
+				send(("result",encrypt_hashresult,encrypt_res,rid), to = client)
+				logging.info("replica "+ str(i+1) +": result from tail  -> client "+ str(c.index(client)) +" is sent for slot "+ str(slot))
+			else:
+				drop =0 
+			#output("tail : sent to client")
+			#t_pr_box = Box(pk, public_key_dict[r[i]])
+			
+			#encrypt_client = pk.sign(str(client).encode())
+			#output("tail : before sending to prev _rep")
+			
+			
+			#output("tail : sent to prev rep")
+			
+	def run():
+		logging.basicConfig(format='%(asctime)s : %(message)s',level = logging.INFO, filename=sys.argv[-1][0:-4]+'_log.log')
+		await(False)		

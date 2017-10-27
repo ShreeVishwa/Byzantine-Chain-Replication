@@ -1,0 +1,110 @@
+2017-10-22 21:45:20,331 : Olympus : Generated Signature keys for clients
+2017-10-22 21:45:20,333 : Olympus : Generated Signature keys for replicas
+2017-10-22 21:45:20,411 : Client 0: Client 0 sent request number 0 opration put('movie','star') to replica 0
+2017-10-22 21:45:20,419 : replica 0:  client 0 -head signature success for rid 0
+2017-10-22 21:45:20,421 : replica 0:  replica 0 -> replica 1 for slot 0
+2017-10-22 21:45:20,422 : Client 1: Client 1 sent request number 0 opration put('jedi,'luke skywalker) to replica 0
+2017-10-22 21:45:20,428 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 21:45:20,429 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 0
+2017-10-22 21:45:20,429 : replica 0:  client 1 -head signature success for rid 0
+2017-10-22 21:45:20,431 : replica 0:  replica 0 -> replica 1 for slot 1
+2017-10-22 21:45:20,433 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 0
+2017-10-22 21:45:20,437 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 21:45:20,437 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 1
+2017-10-22 21:45:20,437 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 21:45:20,438 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 0
+2017-10-22 21:45:20,439 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 1
+2017-10-22 21:45:20,443 : replica 2: shuttle from replica 2 -> replica 3 is sent for slot 0
+2017-10-22 21:45:20,447 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 21:45:20,447 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 1
+2017-10-22 21:45:20,447 : replica 3: replica 2 -> replica 3signature success 
+2017-10-22 21:45:20,448 : replica 3: shuttle from replica 2 -> replica 3 is received for slot 0
+2017-10-22 21:45:20,449 : replica 2: shuttle from replica 2 -> replica 3 is sent for slot 1
+2017-10-22 21:45:20,453 : replica 3: shuttle from replica 3 -> replica 4 is sent for slot 0
+2017-10-22 21:45:20,457 : replica 3: replica 2 -> replica 3signature success 
+2017-10-22 21:45:20,457 : replica 3: shuttle from replica 2 -> replica 3 is received for slot 1
+2017-10-22 21:45:20,457 : replica 4: replica 3 -> replica 4signature success 
+2017-10-22 21:45:20,458 : replica 4: shuttle from replica 3 -> replica 4 is received for slot 0
+2017-10-22 21:45:20,460 : replica 3: shuttle from replica 3 -> replica 4 is sent for slot 1
+2017-10-22 21:45:20,462 : replica 4: result shuttle  from tail  -> replica 3 is sent for slot 0
+2017-10-22 21:45:20,464 : replica 3 : Replica 4 -> Replica 3 signature success
+2017-10-22 21:45:20,465 : Replica 3 Reshult_shuttle cached for slot 0
+2017-10-22 21:45:20,465 : replica 4: result from tail  -> client 0 is sent for slot 0
+2017-10-22 21:45:20,469 : replica 4: replica 3 -> replica 4signature success 
+2017-10-22 21:45:20,469 : replica 4: shuttle from replica 3 -> replica 4 is received for slot 1
+2017-10-22 21:45:20,470 : Client 0: Result validation success after receiving result from tail for rid 0
+2017-10-22 21:45:20,470 : replica 2 : Replica 3 -> Replica 2 signature success
+2017-10-22 21:45:20,471 : Replica 2 Reshult_shuttle cached for slot 0
+2017-10-22 21:45:20,471 : replica 4: result shuttle  from tail  -> replica 3 is sent for slot 1
+2017-10-22 21:45:20,473 : replica 3 : Replica 4 -> Replica 3 signature success
+2017-10-22 21:45:20,474 : Replica 3 Reshult_shuttle cached for slot 1
+2017-10-22 21:45:20,474 : replica 4: result from tail  -> client 1 is sent for slot 1
+2017-10-22 21:45:20,475 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 21:45:20,476 : Replica 1 Reshult_shuttle cached for slot 0
+2017-10-22 21:45:20,477 : replica 2 : Replica 3 -> Replica 2 signature success
+2017-10-22 21:45:20,477 : Replica 2 Reshult_shuttle cached for slot 1
+2017-10-22 21:45:20,477 : Client 1: Result validation success after receiving result from tail for rid 0
+2017-10-22 21:45:20,479 : Client 0: Client 0 sent request number 1 opration append('movie',' wars') to replica 0
+2017-10-22 21:45:20,481 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 21:45:20,481 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 21:45:20,481 : Replica 1 Reshult_shuttle cached for slot 1
+2017-10-22 21:45:20,482 : Replica 0 Reshult_shuttle cached for slot 0
+2017-10-22 21:45:20,482 : Replica 0 Reshult_shuttle reached head
+2017-10-22 21:45:20,484 : replica 0:  client 0 -head signature success for rid 1
+2017-10-22 21:45:20,486 : replica 0:  replica 0 -> replica 1 for slot 2
+2017-10-22 21:45:20,488 : Client 1: Client 1 sent request number 1 opration slice('jedi','0:4') to replica 0
+2017-10-22 21:45:20,488 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 21:45:20,489 : Replica 0 Reshult_shuttle cached for slot 1
+2017-10-22 21:45:20,489 : Replica 0 Reshult_shuttle reached head
+2017-10-22 21:45:20,491 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 21:45:20,491 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 2
+2017-10-22 21:45:20,492 : replica 0:  client 1 -head signature success for rid 1
+2017-10-22 21:45:20,493 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 2
+2017-10-22 21:45:20,493 : replica 0:  replica 0 -> replica 1 for slot 3
+2017-10-22 21:45:20,497 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 21:45:20,497 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 2
+2017-10-22 21:45:20,498 : replica 1: replica 0 -> replica 1signature success 
+2017-10-22 21:45:20,499 : replica 1: shuttle from replica 0 -> replica 1 is received for slot 3
+2017-10-22 21:45:20,499 : replica 2: shuttle from replica 2 -> replica 3 is sent for slot 2
+2017-10-22 21:45:20,501 : replica 1: shuttle from replica 1 -> replica 2 is sent for slot 3
+2017-10-22 21:45:20,503 : replica 3: replica 2 -> replica 3signature success 
+2017-10-22 21:45:20,503 : replica 3: shuttle from replica 2 -> replica 3 is received for slot 2
+2017-10-22 21:45:20,505 : replica 2: replica 1 -> replica 2signature success 
+2017-10-22 21:45:20,505 : replica 2: shuttle from replica 1 -> replica 2 is received for slot 3
+2017-10-22 21:45:20,506 : replica 3: shuttle from replica 3 -> replica 4 is sent for slot 2
+2017-10-22 21:45:20,507 : replica 2: shuttle from replica 2 -> replica 3 is sent for slot 3
+2017-10-22 21:45:20,510 : replica 4: replica 3 -> replica 4signature success 
+2017-10-22 21:45:20,510 : replica 4: shuttle from replica 3 -> replica 4 is received for slot 2
+2017-10-22 21:45:20,511 : replica 3: replica 2 -> replica 3signature success 
+2017-10-22 21:45:20,511 : replica 3: shuttle from replica 2 -> replica 3 is received for slot 3
+2017-10-22 21:45:20,512 : replica 4: result shuttle  from tail  -> replica 3 is sent for slot 2
+2017-10-22 21:45:20,513 : replica 4: result from tail  -> client 0 is sent for slot 2
+2017-10-22 21:45:20,514 : replica 3: shuttle from replica 3 -> replica 4 is sent for slot 3
+2017-10-22 21:45:20,516 : replica 3 : Replica 4 -> Replica 3 signature success
+2017-10-22 21:45:20,516 : Client 0: Result validation success after receiving result from tail for rid 1
+2017-10-22 21:45:20,516 : Replica 3 Reshult_shuttle cached for slot 2
+2017-10-22 21:45:20,517 : Client 0:  Client 0 sent fianl results to parent for checking
+2017-10-22 21:45:20,518 : Parent Client : Final Results check passed for Client : 0
+2017-10-22 21:45:20,518 : replica 4: replica 3 -> replica 4signature success 
+2017-10-22 21:45:20,518 : replica 4: shuttle from replica 3 -> replica 4 is received for slot 3
+2017-10-22 21:45:20,519 : replica 2 : Replica 3 -> Replica 2 signature success
+2017-10-22 21:45:20,520 : Replica 2 Reshult_shuttle cached for slot 2
+2017-10-22 21:45:20,520 : replica 4: result shuttle  from tail  -> replica 3 is sent for slot 3
+2017-10-22 21:45:20,521 : replica 4: result from tail  -> client 1 is sent for slot 3
+2017-10-22 21:45:20,522 : replica 3 : Replica 4 -> Replica 3 signature success
+2017-10-22 21:45:20,522 : Replica 3 Reshult_shuttle cached for slot 3
+2017-10-22 21:45:20,523 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 21:45:20,523 : Replica 1 Reshult_shuttle cached for slot 2
+2017-10-22 21:45:20,524 : Client 1: Result validation success after receiving result from tail for rid 1
+2017-10-22 21:45:20,525 : Client 1:  Client 1 sent fianl results to parent for checking
+2017-10-22 21:45:20,525 : Parent Client : Final Results check passed for Client : 1
+2017-10-22 21:45:20,525 : replica 2 : Replica 3 -> Replica 2 signature success
+2017-10-22 21:45:20,526 : Replica 2 Reshult_shuttle cached for slot 3
+2017-10-22 21:45:20,526 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 21:45:20,527 : Replica 0 Reshult_shuttle cached for slot 2
+2017-10-22 21:45:20,527 : Replica 0 Reshult_shuttle reached head
+2017-10-22 21:45:20,529 : replica 1 : Replica 2 -> Replica 1 signature success
+2017-10-22 21:45:20,529 : Replica 1 Reshult_shuttle cached for slot 3
+2017-10-22 21:45:20,533 : replica 0 : Replica 1 -> Replica 0 signature success
+2017-10-22 21:45:20,533 : Replica 0 Reshult_shuttle cached for slot 3
+2017-10-22 21:45:20,533 : Replica 0 Reshult_shuttle reached head

@@ -1,0 +1,54 @@
+import sys
+import nacl.encoding
+import nacl.hash
+import nacl.signing
+from nacl.bindings.utils import sodium_memcmp
+from re import split
+import time
+import logging
+class Olympus(process):
+	def setup(config : dict,c :list,r:list,parent : list):
+		self.config = config
+		self.failure = dict()
+	def run():
+		logging.basicConfig(format='%(asctime)s : %(message)s',level = logging.INFO, filename=sys.argv[-1][0:-4]+'_log.log')
+		#num_replica = config['t'] 
+		#num_replica = (num_replica*2)+1
+		#num_client = config['num_client']
+		head_timeout = config['head_timeout']/1000
+		nonhead_timeout = config['nonhead_timeout']/1000
+		client_timeout = config['client_timeout']/1000
+		for x in config.keys():
+			if x.startswith("failures"):
+				failure[x[-2]] = config[x].split(";")
+				
+		#workload = []
+		
+		d = dict()
+		a=False
+		
+		public_key_dict=dict()
+		private_key_dict = dict()
+		
+		signing_key = nacl.signing.SigningKey.generate()
+		public_key_dict[parent[0]] = signing_key.verify_key.encode(encoder=nacl.encoding.HexEncoder)
+		private_key_dict[parent[0]] = signing_key
+		for x in c:
+			signing_key = nacl.signing.SigningKey.generate()
+			public_key_dict[x] = signing_key.verify_key.encode(encoder=nacl.encoding.HexEncoder)
+			private_key_dict[x] = signing_key
+		logging.info("Olympus : Generated Signature keys for clients")	
+		for x in r:
+			signing_key = nacl.signing.SigningKey.generate()
+			public_key_dict[x] = signing_key.verify_key.encode(encoder=nacl.encoding.HexEncoder)
+			private_key_dict[x] = signing_key
+		logging.info("Olympus : Generated Signature keys for replicas")	
+		for x in r :
+			
+			setup(x,(a,d,r,c,public_key_dict,private_key_dict[x],nonhead_timeout,head_timeout,failure))
+		for i,x in enumerate(c):
+			setup(x, (config['workload['+str(i)+']'],r,c,x,public_key_dict,private_key_dict[x],client_timeout,parent[0]))
+		setup(parent, (c,public_key_dict,private_key_dict[parent[0]]))
+		start(c)
+		start(r)
+		start(parent)	
